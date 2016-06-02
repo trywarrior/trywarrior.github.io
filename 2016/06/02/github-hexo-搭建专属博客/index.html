@@ -27,7 +27,8 @@ http://www.jianshu.com/p/05289a4bc8b2感谢原作者的倾情奉献。本文主�
 <meta property="og:image" content="http://www.cnfeat.com/file:///G:/markdown%20png/dnsmanager.png">
 <meta property="og:image" content="http://www.cnfeat.com/file:///G:/markdown%20png/ip.png">
 <meta property="og:image" content="http://www.cnfeat.com/file:///G:/markdown png/goddaY.png">
-<meta property="og:updated_time" content="2016-06-02T05:50:57.285Z">
+<meta property="og:image" content="http://www.cnfeat.com/file:///G:/deploy.png">
+<meta property="og:updated_time" content="2016-06-02T06:03:40.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo 搭建专属博客">
 <meta name="twitter:description" content="本文大部分参考
@@ -110,7 +111,7 @@ http://www.jianshu.com/p/05289a4bc8b2感谢原作者的倾情奉献。本文主�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买域名"><span class="toc-number">1.</span> <span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名解析管理"><span class="toc-number">2.</span> <span class="toc-text">域名解析管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名设置"><span class="toc-number">3.</span> <span class="toc-text">域名设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNAME文件"><span class="toc-number">4.</span> <span class="toc-text">CNAME文件</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买域名"><span class="toc-number">1.</span> <span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名解析管理"><span class="toc-number">2.</span> <span class="toc-text">域名解析管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名设置"><span class="toc-number">3.</span> <span class="toc-text">域名设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNAME文件"><span class="toc-number">4.</span> <span class="toc-text">CNAME文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">5.</span> <span class="toc-text">问题</span></a></li></ol>
 		
 		</div>
 		
@@ -127,7 +128,15 @@ http://www.jianshu.com/p/05289a4bc8b2感谢原作者的倾情奉献。本文主�
 </ul>
 <h2 id="域名设置"><a href="#域名设置" class="headerlink" title="域名设置"></a>域名设置</h2><p>在godday里面设置一下域名服务器：登录goddaddy账户,进入域名管理，在域名服务器里面设置一下。具体操作如图所示：<img src="file:///G:/markdown png/goddaY.png" alt="">,这二个值对应DNSPOD里面二条系统记录的值。</p>
 <h2 id="CNAME文件"><a href="#CNAME文件" class="headerlink" title="CNAME文件"></a>CNAME文件</h2><ol>
-<li></li>
+<li>在本机hexo 文件夹下得source子目录下，创建CNAME文件，写入自己的域名 列如：tongruyi.club。</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>ERROR Deployer not found: github<br>修改_config.yml后，hexo deploy 如果报这个错误。<br>解决方法：<br> <strong>npm install hexo-deployer-git –save</strong></li>
+<li>域名解析失败注意点：</li>
+<li>DSNPOD有没有添加对应的域名以及记录</li>
+<li>godday要设置域名服务器</li>
+<li>hexo/source/CNAME该文件有没有创建</li>
+<li>hexo/.config.ymlw文件deploy字段属性分别设置为如下图所示<img src="file:///G:/deploy.png" alt=""></li>
 </ol>
   
 	</div>
@@ -165,7 +174,7 @@ http://www.jianshu.com/p/05289a4bc8b2感谢原作者的倾情奉献。本文主�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买域名"><span class="toc-number">1.</span> <span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名解析管理"><span class="toc-number">2.</span> <span class="toc-text">域名解析管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名设置"><span class="toc-number">3.</span> <span class="toc-text">域名设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNAME文件"><span class="toc-number">4.</span> <span class="toc-text">CNAME文件</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#购买域名"><span class="toc-number">1.</span> <span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名解析管理"><span class="toc-number">2.</span> <span class="toc-text">域名解析管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名设置"><span class="toc-number">3.</span> <span class="toc-text">域名设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNAME文件"><span class="toc-number">4.</span> <span class="toc-text">CNAME文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">5.</span> <span class="toc-text">问题</span></a></li></ol>
  
   </div>
 

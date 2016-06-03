@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.cnfeat.com/tags/index.html</loc>
+    
+    <lastmod>2016-06-03T10:42:14.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cnfeat.com/categories/index.html</loc>
+    
+    <lastmod>2016-06-03T10:41:43.477Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.cnfeat.com/404.html</loc>
     
     <lastmod>2016-06-03T06:58:32.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cnfeat.com/guestbook/index.html</loc>
+    
+    <lastmod>2016-06-03T06:57:10.179Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.cnfeat.com/2016/06/02/github-hexo-%E6%90%AD%E5%BB%BA%E4%B8%93%E5%B1%9E%E5%8D%9A%E5%AE%A2/</loc>
+    
+    <lastmod>2016-06-02T06:53:56.724Z</lastmod>
     
   </url>
   

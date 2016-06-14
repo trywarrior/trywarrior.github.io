@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/emoj命名.png">
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/emoj-key.png">
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/原理流程图.png">
-<meta property="og:updated_time" content="2016-06-14T06:34:39.145Z">
+<meta property="og:updated_time" content="2016-06-14T06:38:50.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 仿微信表情实现原理分析">
 <meta name="twitter:description" content="&amp;#x4E00; &amp;#x5B57;&amp;#x7B26;&amp;#x96C6;&amp;#x548C;&amp;#x5B57;&amp;#x7B26;&amp;#x7F16;&amp;#x7801;&amp;#x5B57;&amp;#x7B26;&amp;#x96C6;&amp;#x5C31;&amp;#x89C4;&amp;#x5B9A;&amp;#x4E86;&amp;#x67D0;&amp;#x4E2A;&amp;#x6587;&amp;#x5B57;&amp;#x5BF9;&amp;#x5E94;&amp;#x7684;&amp;#x4E8C;&amp;#x8FDB">
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -259,7 +259,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -322,7 +322,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-13T19:09:52+08:00" content="2016-06-13">
               2016-06-13
             </time>
@@ -350,7 +350,7 @@
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">Pengunjung </span>
+               <span class="post-meta-item-text">visitors </span>
                <span class="leancloud-visitors-count"></span>
               </span>
           
@@ -375,23 +375,23 @@
 <h1 id="&#x4E09;-&#x589E;&#x8865;&#x5B57;&#x7B26;"><a href="#&#x4E09;-&#x589E;&#x8865;&#x5B57;&#x7B26;" class="headerlink" title="&#x4E09; &#x589E;&#x8865;&#x5B57;&#x7B26;"></a>&#x4E09; &#x589E;&#x8865;&#x5B57;&#x7B26;</h1><p>&#x63D0;&#x5230;&#x589E;&#x8865;&#x5B57;&#x7B26;&#xFF0C;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x5230;<a href="http://blog.csdn.net/andycpp/article/details/1682793" target="_blank" rel="external">http://blog.csdn.net/andycpp/article/details/1682793</a>&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4E86;&#x89E3;&#x8FD9;&#x4E2A;&#x589E;&#x8865;&#x5B57;&#x7B26;&#x4E86;&#xFF1F;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x8868;&#x60C5;&#x4EE5;&#x53CA;&#x8868;&#x60C5;&#x8F6C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65F6;&#x5019;&#x80FD;&#x591F;&#x589E;&#x5F3A;&#x7406;&#x89E3;&#x3002;</p>
 <h1 id="&#x56DB;-&#x5B9E;&#x73B0;&#x8868;&#x60C5;&#x5E93;"><a href="#&#x56DB;-&#x5B9E;&#x73B0;&#x8868;&#x60C5;&#x5E93;" class="headerlink" title="&#x56DB; &#x5B9E;&#x73B0;&#x8868;&#x60C5;&#x5E93;"></a>&#x56DB; &#x5B9E;&#x73B0;&#x8868;&#x60C5;&#x5E93;</h1><ol>
 <li>&#x5728;&#x5DE5;&#x7A0B;res&#x76EE;&#x5F55;&#x4E0B;&#x9762;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x5939;drawable<em>nodpi&#xFF0C;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x9700;&#x8981;&#x5C06;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x4EE5;emoji</em>&#x201C;unicode&#x201D;&#x7684;&#x5F62;&#x5F0F;&#x653E;&#x5728;drawable-nodpi&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9762;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<img src="/2016/06/13/Emoji-&#x8868;&#x60C5;&#x77E5;&#x8BC6;/emoj&#x547D;&#x540D;.png" alt="">,&#x4F18;&#x79C0;&#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;Emojiicon&#x5C06;&#x6807;&#x51C6;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x6574;&#x7406;&#x5F97;&#x5F88;&#x597D;&#xFF0C;&#x8D44;&#x6E90;&#x56FE;&#x7247;&#x53EF;&#x4EE5;&#x5168;&#x90E8;&#x4ECE;&#x8BE5;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x4E2D;&#x83B7;&#x53D6;&#xFF0C;&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/rockerhieu/emojicon" target="_blank" rel="external">https://github.com/rockerhieu/emojicon</a>&#xFF0C;&#x8BE5;&#x9879;&#x76EE;&#x4E5F;&#x5C06;&#x6BCF;&#x4E2A;&#x8868;&#x60C5;&#x7684;unicode&#x548C;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;id&#x4EE5;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x5F62;&#x5F0F;&#x4FDD;&#x5B58;&#x5728;SparseIntArray&#x4E2D;&#xFF0C;EmojiIcon&#x9879;&#x76EE;&#x4E2D;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x5728;EmojiHandler&#x91CC;&#x9762;&#x3002;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;<img src="/2016/06/13/Emoji-&#x8868;&#x60C5;&#x77E5;&#x8BC6;/emoj-key.png" alt="">&#x3002;</li>
-<li>&#x751F;&#x6210;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;Pattern&#x5B9E;&#x5217;&#xFF0C;&#x56E0;&#x4E3A;EditText&#x91CC;&#x9762;&#x8F93;&#x5165;&#x6587;&#x672C;&#xFF0C;&#x8BE5;pattern&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x8868;&#x60C5;&#x3002;sEmojisMap&#x662F;1&#x4E2D;&#x751F;&#x6210;&#x7684;&#x5B58;&#x50A8;&#x6BCF;&#x4E2A;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x8868;&#x60C5;&#x8D44;&#x6E90;id&#x7684;map&#x3002;&#x83B7;&#x53D6;pattern&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<pre><code>    `/**
- * Builds the regular expression we use to find smileys in
- * {@link #addSmileySpans}. &#x8BE5;&#x5904;&#x5C06;&#x6BCF;&#x4E2A;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;unicode
- */
-private Pattern buildPattern() {
-    StringBuilder patternString = new StringBuilder(EmojiHandler.sEmojisMap.size() * 3);
-    patternString.append(&apos;(&apos;);
-    for(int i=0;i&lt;EmojiHandler.sEmojisMap.size();i++)
-    {
-        patternString.append(Pattern.quote(convertUnicode(Integer.toHexString(EmojiHandler.sEmojisMap.keyAt(i)))));
-        patternString.append(&apos;|&apos;);
-    }
-    patternString.replace(patternString.length() - 1,
-            patternString.length(), &quot;)&quot;);
-    return Pattern.compile(patternString.toString());
-}
-</code></pre>   /*&#x6539;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;unicode &#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x8868;&#x60C5;&#x663E;&#x793A; &#x5982;&#x201D;1f601&#x201D;&#x8F6C;&#x6362;&#x6210;&#x7B11;&#x8138;<pre><code>*&#x56E0;&#x4E3A;&#x8868;&#x60C5; &#x6709;&#x7684;&#x662F;&#x4E8C;&#x4E2A;unicode&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x5982;    U+0038 U+20E3&#xFF0C;
+<li>&#x751F;&#x6210;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;Pattern&#x5B9E;&#x5217;&#xFF0C;&#x56E0;&#x4E3A;EditText&#x91CC;&#x9762;&#x8F93;&#x5165;&#x6587;&#x672C;&#xFF0C;&#x8BE5;pattern&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x8868;&#x60C5;&#x3002;sEmojisMap&#x662F;1&#x4E2D;&#x751F;&#x6210;&#x7684;&#x5B58;&#x50A8;&#x6BCF;&#x4E2A;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x8868;&#x60C5;&#x8D44;&#x6E90;id&#x7684;map&#x3002;&#x83B7;&#x53D6;pattern&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<br>   `/**<pre><code>  * Builds the regular expression we use to find smileys in
+  * {@link #addSmileySpans}. &#x8BE5;&#x5904;&#x5C06;&#x6BCF;&#x4E2A;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;unicode
+  */
+ private Pattern buildPattern() {
+     StringBuilder patternString = new StringBuilder(EmojiHandler.sEmojisMap.size() * 3);
+     patternString.append(&apos;(&apos;);
+     for(int i=0;i&lt;EmojiHandler.sEmojisMap.size();i++)
+     {
+         patternString.append(Pattern.quote(convertUnicode(Integer.toHexString(EmojiHandler.sEmojisMap.keyAt(i)))));
+         patternString.append(&apos;|&apos;);
+     }
+     patternString.replace(patternString.length() - 1,
+             patternString.length(), &quot;)&quot;);
+     return Pattern.compile(patternString.toString());
+ }
+    /*&#x6539;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;unicode &#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x8868;&#x60C5;&#x663E;&#x793A; &#x5982;&quot;1f601&quot;&#x8F6C;&#x6362;&#x6210;&#x7B11;&#x8138;
+*&#x56E0;&#x4E3A;&#x8868;&#x60C5; &#x6709;&#x7684;&#x662F;&#x4E8C;&#x4E2A;unicode&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x5982;    U+0038 U+20E3&#xFF0C;
 */
 </code></pre>   private static String convertUnicode(String emo) {<pre><code>    emo = emo.substring(emo.indexOf(&quot;_&quot;) + 1);
     if (emo.length() &lt; 6) {
@@ -412,36 +412,34 @@ private Pattern buildPattern() {
     return s;
 }
 </code></pre> `</li>
-<li><p>&#x5BF9;edittext&#x91CC;&#x9762;&#x7684;&#x6587;&#x672C;&#x67E5;&#x627E;&#x8868;&#x60C5;&#xFF0C;&#x67E5;&#x627E;&#x5230;&#x8868;&#x60C5;&#xFF0C;&#x5C06;&#x8868;&#x60C5;&#x8F6C;&#x6362;&#x6210;&#x5176;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x201C;1f601&#x201D;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x8FD9;&#x4E2A;unicode&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4ECE;sEmojisMap&#x53D6;&#x51FA;&#x5BF9;&#x5E94;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x7684;&#x8D44;&#x6E90;id&#xFF0C;&#x6839;&#x636E;&#x83B7;&#x53D6;&#x5230;&#x7684;resid&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x56FE;&#x7247;&#xFF0C;&#x751F;&#x6210;SpannableString&#x3002;</p>
-<p> `public static CharSequence addSmileySpans(CharSequence text) {</p>
-<pre><code>if(text == null) {
-    text = &quot;&quot;;
-}
-//SpannableStringBuilder builder = new SpannableStringBuilder(text);
-SpannableString builder = new SpannableString(text); 
-Matcher matcher = EmojiParser.getInstance(CMChatApplication.getInstance()).mPattern.matcher(text);
-while (matcher.find()) {
-    String hexStr=unicode2String(matcher.group());
-    int resId;
-    if(!hexStr.equals(&quot;&quot;)) {
-        resId = EmojiHandler.sEmojisMap.get(Integer.parseInt(hexStr,16));
-    }
-    else
-        continue;
-    String key=matcher.group();
-    Drawable drawable = CMChatApplication.getInstance().getResources().getDrawable(resId);
-    float height = drawable.getIntrinsicHeight() ;
-    float width=drawable.getIntrinsicWidth();
-    drawable.setBounds(0, 0, (int) width, (int) height);
-</code></pre><p> // &#x8BA1;&#x7B97;&#x8BE5;&#x56FE;&#x7247;&#x540D;&#x5B57;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x66FF;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;  </p>
-<pre><code>        builder.setSpan(new ImageSpan(drawable), matcher.start(),
+<li>&#x5BF9;edittext&#x91CC;&#x9762;&#x7684;&#x6587;&#x672C;&#x67E5;&#x627E;&#x8868;&#x60C5;&#xFF0C;&#x67E5;&#x627E;&#x5230;&#x8868;&#x60C5;&#xFF0C;&#x5C06;&#x8868;&#x60C5;&#x8F6C;&#x6362;&#x6210;&#x5176;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x201C;1f601&#x201D;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x8FD9;&#x4E2A;unicode&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4ECE;sEmojisMap&#x53D6;&#x51FA;&#x5BF9;&#x5E94;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x7684;&#x8D44;&#x6E90;id&#xFF0C;&#x6839;&#x636E;&#x83B7;&#x53D6;&#x5230;&#x7684;resid&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x56FE;&#x7247;&#xFF0C;&#x751F;&#x6210;SpannableString&#x3002;<pre><code>public static CharSequence addSmileySpans(CharSequence text) {
+  if(text == null) {
+      text = &quot;&quot;;
+  }
+  //SpannableStringBuilder builder = new SpannableStringBuilder(text);
+  SpannableString builder = new SpannableString(text); 
+  Matcher matcher = EmojiParser.getInstance(CMChatApplication.getInstance()).mPattern.matcher(text);
+  while (matcher.find()) {
+      String hexStr=unicode2String(matcher.group());
+      int resId;
+      if(!hexStr.equals(&quot;&quot;)) {
+          resId = EmojiHandler.sEmojisMap.get(Integer.parseInt(hexStr,16));
+      }
+      else
+          continue;
+      String key=matcher.group();
+      Drawable drawable = CMChatApplication.getInstance().getResources().getDrawable(resId);
+      float height = drawable.getIntrinsicHeight() ;
+      float width=drawable.getIntrinsicWidth();
+      drawable.setBounds(0, 0, (int) width, (int) height);
+</code></pre> // &#x8BA1;&#x7B97;&#x8BE5;&#x56FE;&#x7247;&#x540D;&#x5B57;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8981;&#x66FF;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;  <pre><code>        builder.setSpan(new ImageSpan(drawable), matcher.start(),
                 matcher.start()+key.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
     return builder;
-}`
-</code></pre><p>&#x4E0B;&#x9762;&#x662F;&#x8868;&#x60C5;&#x5B9E;&#x73B0;&#x7684;&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;<br><img src="/2016/06/13/Emoji-&#x8868;&#x60C5;&#x77E5;&#x8BC6;/&#x539F;&#x7406;&#x6D41;&#x7A0B;&#x56FE;.png" alt=""></p>
-</li>
+} 
+</code></pre></li>
 </ol>
+<p>&#x4E0B;&#x9762;&#x662F;&#x8868;&#x60C5;&#x5B9E;&#x73B0;&#x7684;&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;<br>   <img src="/2016/06/13/Emoji-&#x8868;&#x60C5;&#x77E5;&#x8BC6;/&#x539F;&#x7406;&#x6D41;&#x7A0B;&#x56FE;.png" alt=""></p>
 
       
     </div>
@@ -583,10 +581,10 @@ while (matcher.find()) {
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -603,7 +601,7 @@ while (matcher.find()) {
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -613,7 +611,7 @@ while (matcher.find()) {
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -693,7 +691,7 @@ while (matcher.find()) {
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

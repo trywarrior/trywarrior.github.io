@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/emoj命名.png">
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/emoj-key.png">
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Emoji-表情知识/原理流程图.png">
-<meta property="og:updated_time" content="2016-06-14T06:38:50.670Z">
+<meta property="og:updated_time" content="2016-06-14T06:40:08.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 仿微信表情实现原理分析">
 <meta name="twitter:description" content="&amp;#x4E00; &amp;#x5B57;&amp;#x7B26;&amp;#x96C6;&amp;#x548C;&amp;#x5B57;&amp;#x7B26;&amp;#x7F16;&amp;#x7801;&amp;#x5B57;&amp;#x7B26;&amp;#x96C6;&amp;#x5C31;&amp;#x89C4;&amp;#x5B9A;&amp;#x4E86;&amp;#x67D0;&amp;#x4E2A;&amp;#x6587;&amp;#x5B57;&amp;#x5BF9;&amp;#x5E94;&amp;#x7684;&amp;#x4E8C;&amp;#x8FDB">
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -259,7 +259,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            Search
           </a>
         </li>
       
@@ -322,7 +322,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-06-13T19:09:52+08:00" content="2016-06-13">
               2016-06-13
             </time>
@@ -393,24 +393,25 @@
     /*&#x6539;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;unicode &#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6210;&#x8868;&#x60C5;&#x663E;&#x793A; &#x5982;&quot;1f601&quot;&#x8F6C;&#x6362;&#x6210;&#x7B11;&#x8138;
 *&#x56E0;&#x4E3A;&#x8868;&#x60C5; &#x6709;&#x7684;&#x662F;&#x4E8C;&#x4E2A;unicode&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x5982;    U+0038 U+20E3&#xFF0C;
 */
-</code></pre>   private static String convertUnicode(String emo) {<pre><code>    emo = emo.substring(emo.indexOf(&quot;_&quot;) + 1);
-    if (emo.length() &lt; 6) {
-            String s = new String(Character.toChars(Integer.parseInt(emo, 16)));
-        return s;
-    }
-    String[] emos = emo.split(&quot;_&quot;);
-    char[] char0 = Character.toChars(Integer.parseInt(emos[0], 16));
-    char[] char1 = Character.toChars(Integer.parseInt(emos[1], 16));
-    char[] emoji = new char[char0.length + char1.length];
-    for (int i = 0; i &lt; char0.length; i++) {
-        emoji[i] = char0[i];
-    }
-    for (int i = char0.length; i &lt; emoji.length; i++) {
-        emoji[i] = char1[i - char0.length];
-    }
-    String s =  new String(emoji);
-    return s;
-}
+   private static String convertUnicode(String emo) {
+     emo = emo.substring(emo.indexOf(&quot;_&quot;) + 1);
+     if (emo.length() &lt; 6) {
+             String s = new String(Character.toChars(Integer.parseInt(emo, 16)));
+         return s;
+     }
+     String[] emos = emo.split(&quot;_&quot;);
+     char[] char0 = Character.toChars(Integer.parseInt(emos[0], 16));
+     char[] char1 = Character.toChars(Integer.parseInt(emos[1], 16));
+     char[] emoji = new char[char0.length + char1.length];
+     for (int i = 0; i &lt; char0.length; i++) {
+         emoji[i] = char0[i];
+     }
+     for (int i = char0.length; i &lt; emoji.length; i++) {
+         emoji[i] = char1[i - char0.length];
+     }
+     String s =  new String(emoji);
+     return s;
+ }
 </code></pre> `</li>
 <li>&#x5BF9;edittext&#x91CC;&#x9762;&#x7684;&#x6587;&#x672C;&#x67E5;&#x627E;&#x8868;&#x60C5;&#xFF0C;&#x67E5;&#x627E;&#x5230;&#x8868;&#x60C5;&#xFF0C;&#x5C06;&#x8868;&#x60C5;&#x8F6C;&#x6362;&#x6210;&#x5176;&#x5BF9;&#x5E94;&#x7684;unicode&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x201C;1f601&#x201D;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x8FD9;&#x4E2A;unicode&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x4ECE;sEmojisMap&#x53D6;&#x51FA;&#x5BF9;&#x5E94;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x7684;&#x8D44;&#x6E90;id&#xFF0C;&#x6839;&#x636E;&#x83B7;&#x53D6;&#x5230;&#x7684;resid&#x83B7;&#x53D6;&#x5230;&#x5BF9;&#x5E94;&#x56FE;&#x7247;&#xFF0C;&#x751F;&#x6210;SpannableString&#x3002;<pre><code>public static CharSequence addSmileySpans(CharSequence text) {
   if(text == null) {
@@ -581,10 +582,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -601,7 +602,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -611,7 +612,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -691,7 +692,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

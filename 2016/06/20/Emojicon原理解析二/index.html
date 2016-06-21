@@ -86,7 +86,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="tool," />
+  <meta name="keywords" content="tongruyi blog" />
 
 
 
@@ -104,28 +104,16 @@
 
 
 
-<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x5927;&amp;#x90E8;&amp;#x5206;&amp;#x53C2;&amp;#x8003;
-
-http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x4F5C;&amp;#x8005;&amp;#x7684;&amp;#x503E;&amp;#x60C5;&amp;#x5949;&amp;#x732E;&amp;#x3002;&amp;#x672C;&amp;#x6587;&amp;">
+<meta name="description" content="&amp;#x4E00; EditTextViewEmojicon&amp;#x5BF9;&amp;#x4E8E;&amp;#x5E38;&amp;#x7528;&amp;#x7684;TextView&amp;#x548C;EditText&amp;#x505A;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x3002;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github+hexo 搭建专属博客">
-<meta property="og:url" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/index.html">
+<meta property="og:title" content="Emojicon原理解析二">
+<meta property="og:url" content="http://www.tongruyi.club/2016/06/20/Emojicon原理解析二/index.html">
 <meta property="og:site_name" content="tongruyi blog">
-<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x5927;&amp;#x90E8;&amp;#x5206;&amp;#x53C2;&amp;#x8003;
-
-http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x4F5C;&amp;#x8005;&amp;#x7684;&amp;#x503E;&amp;#x60C5;&amp;#x5949;&amp;#x732E;&amp;#x3002;&amp;#x672C;&amp;#x6587;&amp;">
-<meta property="og:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/dnssearch.png">
-<meta property="og:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/dnsmanager.png">
-<meta property="og:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/ip.png">
-<meta property="og:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/godday.png">
-<meta property="og:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/deploy.png">
-<meta property="og:updated_time" content="2016-06-02T06:53:56.724Z">
+<meta property="og:description" content="&amp;#x4E00; EditTextViewEmojicon&amp;#x5BF9;&amp;#x4E8E;&amp;#x5E38;&amp;#x7528;&amp;#x7684;TextView&amp;#x548C;EditText&amp;#x505A;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x3002;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x">
+<meta property="og:updated_time" content="2016-06-20T12:22:05.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github+hexo 搭建专属博客">
-<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x5927;&amp;#x90E8;&amp;#x5206;&amp;#x53C2;&amp;#x8003;
-
-http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x4F5C;&amp;#x8005;&amp;#x7684;&amp;#x503E;&amp;#x60C5;&amp;#x5949;&amp;#x732E;&amp;#x3002;&amp;#x672C;&amp;#x6587;&amp;">
-<meta name="twitter:image" content="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/dnssearch.png">
+<meta name="twitter:title" content="Emojicon原理解析二">
+<meta name="twitter:description" content="&amp;#x4E00; EditTextViewEmojicon&amp;#x5BF9;&amp;#x4E8E;&amp;#x5E38;&amp;#x7528;&amp;#x7684;TextView&amp;#x548C;EditText&amp;#x505A;&amp;#x4E86;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x3002;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x63A7;&amp;#x4EF6;&amp;#x">
 
 
 
@@ -143,7 +131,7 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
   };
 </script>
 
-  <title> github+hexo 搭建专属博客 | tongruyi blog </title>
+  <title> Emojicon原理解析二 | tongruyi blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -319,7 +307,7 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
             
             
               
-                github+hexo 搭建专属博客
+                Emojicon原理解析二
               
             
           </h1>
@@ -331,8 +319,8 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-06-02T09:42:03+08:00" content="2016-06-02">
-              2016-06-02
+            <time itemprop="dateCreated" datetime="2016-06-20T19:10:11+08:00" content="2016-06-20">
+              2016-06-20
             </time>
           </span>
 
@@ -342,8 +330,8 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/02/github-hexo-搭建专属博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/github-hexo-搭建专属博客/" itemprop="commentsCount"></span>
+                <a href="/2016/06/20/Emojicon原理解析二/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/20/Emojicon原理解析二/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -353,7 +341,7 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
 
           
           
-             <span id="/2016/06/02/github-hexo-搭建专属博客/" class="leancloud_visitors" data-flag-title="github+hexo 搭建专属博客">
+             <span id="/2016/06/20/Emojicon原理解析二/" class="leancloud_visitors" data-flag-title="Emojicon原理解析二">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,26 +366,67 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
       
 
       
-        <p>&#x672C;&#x6587;&#x5927;&#x90E8;&#x5206;&#x53C2;&#x8003;</p>
-<blockquote>
-<p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">http://www.jianshu.com/p/05289a4bc8b2</a><br>&#x611F;&#x8C22;&#x539F;&#x4F5C;&#x8005;&#x7684;&#x503E;&#x60C5;&#x5949;&#x732E;&#x3002;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x9488;&#x5BF9;&#x8D2D;&#x4E70;&#x57DF;&#x540D;&#xFF0C;&#x7ED1;&#x5B9A;&#x57DF;&#x540D;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;</p>
-<h2 id="&#x73AF;&#x5883;&#x642D;&#x5EFA;"><a href="#&#x73AF;&#x5883;&#x642D;&#x5EFA;" class="headerlink" title="&#x73AF;&#x5883;&#x642D;&#x5EFA;"></a>&#x73AF;&#x5883;&#x642D;&#x5EFA;</h2><p>&#x5B89;&#x88C5;node.js <a href="https://nodejs.org/en/" title="Note.js" target="_blank" rel="external">https://nodejs.org/en/</a><br>&#x5B89;&#x88C5;github window<a href="https://desktop.github.com/" title="githubwindow" target="_blank" rel="external">https://desktop.github.com/</a><br>&#x5EFA;&#x8BAE;&#x5B89;&#x88C5;github window&#x4E0D;&#x7528;&#x5355;&#x72EC;&#x5B89;&#x88C5;git,github window&#x5B89;&#x88C5;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;git shell&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#xFF0C;&#x540E;&#x7EED;&#x5F88;&#x65B9;&#x4FBF;<br>&#x5B89;&#x88C5;hexo<a href="https://hexo.io/zh-cn/" title="hexo" target="_blank" rel="external">https://hexo.io/zh-cn/</a>&#x5B98;&#x7F51;&#x91CC;&#x9762;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x5B89;&#x88C5;&#x63D0;&#x793A;&#x3002;<br>&#x7533;&#x8BF7;github&#x8D26;&#x53F7;&#xFF0C;&#x7565;&#x8FC7;&#x3002;</p>
-</blockquote>
-<h2 id="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"><a href="#&#x8D2D;&#x4E70;&#x57DF;&#x540D;" class="headerlink" title="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"></a>&#x8D2D;&#x4E70;&#x57DF;&#x540D;</h2><p>&#x8D2D;&#x4E70;&#x57DF;&#x540D;&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x652F;&#x4ED8;&#x5B9D;<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">https://sg.godaddy.com/zh/</a>&#x3002;&#x5148;&#x641C;&#x7D22;&#x4F60;&#x60F3;&#x8981;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x641C;&#x7D22;&#x81EA;&#x5DF1;&#x7684;&#x59D3;&#x540D;&#xFF0C;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br><img src="/2016/06/02/github-hexo-&#x642D;&#x5EFA;&#x4E13;&#x5C5E;&#x535A;&#x5BA2;/dnssearch.png" alt="&#x641C;&#x7D22;&#x56FE;&#x7247;"><br>&#x641C;&#x7D22;&#x51FA;&#x6765;&#x540E;&#xFF0C;&#x52A0;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x76F4;&#x63A5;&#x7528;&#x652F;&#x4ED8;&#x5B9D;&#x652F;&#x4ED8;&#x8D2D;&#x4E70;&#x3002;</p>
-<h2 id="&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7BA1;&#x7406;"><a href="#&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7BA1;&#x7406;" class="headerlink" title="&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7BA1;&#x7406;"></a>&#x57DF;&#x540D;&#x89E3;&#x6790;&#x7BA1;&#x7406;</h2><p>&#x7528;&#x7684;&#x662F;dnspod<a href="https://www.dnspod.cn/" target="_blank" rel="external">https://www.dnspod.cn/</a>,&#x6CE8;&#x518C;&#x8D26;&#x6237;&#x540E;&#xFF0C;&#x6DFB;&#x52A0;&#x57DF;&#x540D;&#xFF0C;&#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x8BB0;&#x5F55;&#xFF0C;&#x5982;&#x56FE;&#x6240;&#x793A;<br><img src="/2016/06/02/github-hexo-&#x642D;&#x5EFA;&#x4E13;&#x5C5E;&#x535A;&#x5BA2;/dnsmanager.png" alt="&#x57DF;&#x540D;&#x7BA1;&#x7406;"><br>NS2&#x6761;&#x8BB0;&#x5F55;&#x662F;dnspod&#x9ED8;&#x8BA4;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x3002;</p>
-<ul>
-<li>&#x6DFB;&#x52A0; &#x4E3B;&#x673A;&#x8BB0;&#x5F55;&#x4E3A;@ &#x7C7B;&#x578B;&#x4E3A;A&#x7684;&#x8BB0;&#x5F55; &#x8BB0;&#x5F55;&#x503C;&#x8FD9;&#x4E2A;Ip&#x4E3A;&#x5BF9;&#x5E94;github **.github.io&#x7684;&#x5730;&#x5740;&#x3002;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;<br><img src="/2016/06/02/github-hexo-&#x642D;&#x5EFA;&#x4E13;&#x5C5E;&#x535A;&#x5BA2;/ip.png" alt="ping"></li>
-<li>&#x6DFB;&#x52A0;www&#x8BB0;&#x5F55; &#x7C7B;&#x578B;&#x4E3A;CNAME &#x8BB0;&#x5F55;&#x503C;&#x5BF9;&#x5E94;github respotory&#x7684;&#x540D;&#x79F0; &#x5217;&#x5982;&#xFF1A;zhansan.github.io</li>
-</ul>
-<h2 id="&#x57DF;&#x540D;&#x8BBE;&#x7F6E;"><a href="#&#x57DF;&#x540D;&#x8BBE;&#x7F6E;" class="headerlink" title="&#x57DF;&#x540D;&#x8BBE;&#x7F6E;"></a>&#x57DF;&#x540D;&#x8BBE;&#x7F6E;</h2><p>&#x5728;godday&#x91CC;&#x9762;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x767B;&#x5F55;goddaddy&#x8D26;&#x6237;,&#x8FDB;&#x5165;&#x57DF;&#x540D;&#x7BA1;&#x7406;&#xFF0C;&#x5728;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x91CC;&#x9762;&#x8BBE;&#x7F6E;&#x4E00;&#x4E0B;&#x3002;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;<img src="/2016/06/02/github-hexo-&#x642D;&#x5EFA;&#x4E13;&#x5C5E;&#x535A;&#x5BA2;/godday.png" alt="&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;">,&#x8FD9;&#x4E8C;&#x4E2A;&#x503C;&#x5BF9;&#x5E94;DNSPOD&#x91CC;&#x9762;&#x4E8C;&#x6761;&#x7CFB;&#x7EDF;&#x8BB0;&#x5F55;&#x7684;&#x503C;&#x3002;</p>
-<h2 id="CNAME&#x6587;&#x4EF6;"><a href="#CNAME&#x6587;&#x4EF6;" class="headerlink" title="CNAME&#x6587;&#x4EF6;"></a>CNAME&#x6587;&#x4EF6;</h2><ol>
-<li>&#x5728;&#x672C;&#x673A;hexo &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5F97;source&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x521B;&#x5EFA;CNAME&#x6587;&#x4EF6;&#xFF0C;&#x5199;&#x5165;&#x81EA;&#x5DF1;&#x7684;&#x57DF;&#x540D; &#x5217;&#x5982;&#xFF1A;tongruyi.club&#x3002;</li>
-</ol>
-<h2 id="&#x95EE;&#x9898;"><a href="#&#x95EE;&#x9898;" class="headerlink" title="&#x95EE;&#x9898;"></a>&#x95EE;&#x9898;</h2><ol>
-<li>ERROR Deployer not found: github<br>&#x4FEE;&#x6539;_config.yml&#x540E;&#xFF0C;hexo deploy &#x5982;&#x679C;&#x62A5;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;<br> <strong><strong>npm install hexo-deployer-git &#x2013;save</strong></strong></li>
-<li>&#x57DF;&#x540D;&#x89E3;&#x6790;&#x5931;&#x8D25;&#x6CE8;&#x610F;&#x70B9;&#xFF1A;<br>DSNPOD&#x6709;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x7684;&#x57DF;&#x540D;&#x4EE5;&#x53CA;&#x8BB0;&#x5F55;<br>godday&#x8981;&#x8BBE;&#x7F6E;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;<br>hexo/source/CNAME&#x8BE5;&#x6587;&#x4EF6;&#x6709;&#x6CA1;&#x6709;&#x521B;&#x5EFA;<br>hexo/.config.ymlw&#x6587;&#x4EF6;deploy&#x5B57;&#x6BB5;&#x5C5E;&#x6027;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x4E3A;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;<img src="/2016/06/02/github-hexo-&#x642D;&#x5EFA;&#x4E13;&#x5C5E;&#x535A;&#x5BA2;/deploy.png" alt="_config.yml&#x914D;&#x7F6E;"></li>
-<li>&#x672C;&#x5730;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x2014;&#x2014;&#x65B9;&#x4FBF;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;<br><a href="https://github.com/CodeFalling/hexo-asset-image" title="CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a><br>1.&#x9996;&#x5148;&#x786E;&#x8BA4; _config.yml &#x4E2D;&#x6709; post_asset_folder:true<br>2.&#x5176;&#x6B21;&#x5728;hexo &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x6267;&#x884C;<br><strong>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> &#x2013;save
-</strong><br>3.&#x6700;&#x540E;&#x5728;<em>\hexo\source_posts&#x4E0B;&#x9762;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x6587;&#x4EF6;&#x5939;&#x540D;&#x79F0;&#x4E0E;&#x6587;&#x7AE0;&#x6807;&#x9898;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x5C06;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x7247;&#x5168;&#x90E8;&#x653E;&#x5230;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x3002;&#x5F15;&#x7528;&#x7684;&#x65F6;&#x5019;&#x91C7;&#x7528;&#x7684;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF01;[](&#x6587;&#x7AE0;&#x9898;&#x76EE;/*</em>.jpg)&#x3002;</li>
+        <h1 id="&#x4E00;-EditTextView"><a href="#&#x4E00;-EditTextView" class="headerlink" title="&#x4E00; EditTextView"></a>&#x4E00; EditTextView</h1><p>Emojicon&#x5BF9;&#x4E8E;&#x5E38;&#x7528;&#x7684;TextView&#x548C;EditText&#x505A;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x3002;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x5927;&#x81F4;&#x7684;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>1.&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x548C;&#x5176;&#x4ED6;&#x7684;&#x63A7;&#x4EF6;&#x4E00;&#x6837;,&#x5E94;&#x8BE5;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x7C7B;,&#x800C;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x662F;&#x6709;&#x81EA;&#x5DF1;&#x6765;&#x51B3;&#x5B9A;&#x7684;.
+
+2.&#x6211;&#x4EEC;&#x8981;&#x5728;res/values&#x76EE;&#x5F55;&#x4E0B;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;attrs.xml&#x7684;&#x6587;&#x4EF6;,&#x5E76;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5BF9;&#x63A7;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x5B9A;&#x4E49;.
+
+3.&#x4F7F;&#x7528;AttributeSet&#x6765;&#x5B8C;&#x6210;&#x63A7;&#x4EF6;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;,&#x5E76;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x7C7B;&#x4E2D;&#x53D8;&#x91CF;&#x4E0E;attrs.xml&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x8FDE;&#x63A5;&#x8D77;&#x6765;.
+
+4.&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5DF2;&#x7ECF;&#x8FDE;&#x63A5;&#x7684;&#x5C5E;&#x6027;&#x53D8;&#x91CF;.
+
+5.&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x63A7;&#x4EF6;&#x7C7B;&#x5B9A;&#x4E49;&#x5230;&#x5E03;&#x5C40;&#x7528;&#x7684;xml&#x6587;&#x4EF6;&#x4E2D;&#x53BB;.
+
+6.&#x5728;&#x754C;&#x9762;&#x4E2D;&#x751F;&#x6210;&#x6B64;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x7C7B;&#x5BF9;&#x8C61;,&#x5E76;&#x52A0;&#x4EE5;&#x4F7F;&#x7528;.
+</code></pre><p>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027; Emojicon&#xFF1A;</p>
+<p><code>&lt;declare-styleable name=&quot;Emojicon&quot;&gt;
+        &lt;attr name=&quot;emojiconSize&quot; format=&quot;dimension&quot; /&gt;
+        &lt;attr name=&quot;emojiconAlignment&quot; format=&quot;enum&quot;&gt;
+            &lt;enum name=&quot;bottom&quot; value=&quot;0&quot; /&gt;
+            &lt;enum name=&quot;baseline&quot; value=&quot;1&quot; /&gt;
+        &lt;/attr&gt;
+        &lt;attr name=&quot;emojiconTextStart&quot; format=&quot;integer&quot; /&gt;
+        &lt;attr name=&quot;emojiconTextLength&quot; format=&quot;integer&quot; /&gt;
+        &lt;attr name=&quot;emojiconUseSystemDefault&quot; format=&quot;boolean&quot; /&gt;
+    &lt;/declare-styleable&gt;</code><br>EditTextView&#x91CC;&#x9762;&#x7684;init&#x51FD;&#x6570;&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1A;<br>    <code>private void init(AttributeSet attrs) {
+        mEmojiconTextSize = (int) getTextSize();
+        if (attrs == null) {
+            mEmojiconSize = (int) getTextSize();
+        } else {
+            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Emojicon);
+            mEmojiconSize = (int) a.getDimension(R.styleable.Emojicon_emojiconSize, getTextSize());
+            mEmojiconAlignment = a.getInt(R.styleable.Emojicon_emojiconAlignment, DynamicDrawableSpan.ALIGN_BASELINE);
+            mTextStart = a.getInteger(R.styleable.Emojicon_emojiconTextStart, 0);
+            mTextLength = a.getInteger(R.styleable.Emojicon_emojiconTextLength, -1);
+            mUseSystemDefault = a.getBoolean(R.styleable.Emojicon_emojiconUseSystemDefault, false);
+            a.recycle();
+        }
+//        setText(getText());
+    }</code><br>&#x8868;&#x60C5;&#x8981;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#xFF0C;&#x5FC5;&#x7136;&#x8981;&#x5728;setText&#x91CC;&#x9762;&#x505A;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF1A;<br> <code>public void setText(CharSequence text, BufferType type) {
+        if (!TextUtils.isEmpty(text)) {
+            SpannableStringBuilder builder = new SpannableStringBuilder(text);
+            EmojiconHandler.addEmojis(getContext(), builder, mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mTextStart, mTextLength, mUseSystemDefault);
+            text = builder;
+        }
+        super.setText(text, type);
+    }</code><br>&#x8FD9;&#x91CC;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x7528;EmojiconHandler.addEmojis&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x6210;spannableString,&#x5C31;&#x662F;&#x5C06;&#x6587;&#x672C;&#x91CC;&#x9762;&#x7684;&#x8868;&#x60C5;unicode&#x7528;&#x672C;&#x5730;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x66FF;&#x6362;&#xFF0C;&#x518D;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#x3002;SpannableString&#x3001;SpannableStringBuilder&#x57FA;&#x672C;&#x4E0A;&#x4E0E;String&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4FE9;&#x7684;&#x7279;&#x6B8A;&#x5C31;&#x5728;&#x4E8E;&#x6709;&#x4E00;&#x4E2A;SetSpan&#xFF08;&#xFF09;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x7ED9;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x7684;String&#x6DFB;&#x52A0;&#x5404;&#x79CD;&#x683C;&#x5F0F;&#x6216;&#x8005;&#x79F0;&#x6837;&#x5F0F;&#xFF08;Span&#xFF09;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x7684;String&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x539F;&#x6765;String&#x4E0A;&#x52A0;&#x4E0B;&#x5212;&#x7EBF;&#x3001;&#x52A0;&#x80CC;&#x666F;&#x8272;&#x3001;&#x6539;&#x53D8;&#x5B57;&#x4F53;&#x989C;&#x8272;&#x3001;&#x7528;&#x56FE;&#x7247;&#x628A;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x5B57;&#x7ED9;&#x66FF;&#x6362;&#x6389;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x603B;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;SpannableString&#x3001;SpannableStringBuilder&#x4E0E;String&#x4E00;&#x6837;&#xFF0C; &#x9996;&#x5148;&#x4E5F;&#x662F;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;SpannableString&#x3001;SpannableStringBuilder&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;String&#x5219;&#x4E0D;&#x884C;&#x3002;</p>
+<h1 id="&#x4E8C;-EmojiconEditText"><a href="#&#x4E8C;-EmojiconEditText" class="headerlink" title="&#x4E8C; EmojiconEditText"></a>&#x4E8C; EmojiconEditText</h1><p>EmojiconEditText&#x7684;init&#x51FD;&#x6570;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x52A0;&#x8F7D;&#xFF0C;&#x4E0E;EditTextView&#x7C7B;&#x4F3C;&#xFF1A;<br>  <code>private void init(AttributeSet attrs) {
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Emojicon);
+        mEmojiconSize = (int) a.getDimension(R.styleable.Emojicon_emojiconSize, getTextSize());
+        mEmojiconAlignment = a.getInt(R.styleable.Emojicon_emojiconAlignment, DynamicDrawableSpan.ALIGN_BASELINE);
+        mUseSystemDefault = a.getBoolean(R.styleable.Emojicon_emojiconUseSystemDefault, false);
+        a.recycle();
+        mEmojiconTextSize = (int) getTextSize();
+//        setText(getText());
+    }</code><br>&#x91CD;&#x5199;onTextChanged:<br>  <code>protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
+        updateText();
+    }</code><br>&#x91CC;&#x9762;&#x8C03;&#x7528;&#x4E86;updateText():<br><code>private void updateText() {
+        EmojiconHandler.addEmojis(getContext(), getText(), mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mUseSystemDefault);
+    }</code><br>&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x8C03;&#x7528;&#x4E86; EmojiconHandler.addEmojis&#xFF0C;&#x7136;&#x540E;&#x5728;EmojiconHandler&#x91CC;&#x9762;&#x5BF9;EditText&#x4F5C;&#x5904;&#x7406;&#x3002;</p>
+<h1 id="&#x4E09;-EmojiconHandler"><a href="#&#x4E09;-EmojiconHandler" class="headerlink" title="&#x4E09; EmojiconHandler"></a>&#x4E09; EmojiconHandler</h1><p>&#x524D;&#x9762;&#x4E8C;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x4E86;&#x8BE5;&#x7C7B;&#x7684;addEmojis&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x6587;&#x672C;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x5177;&#x4F53;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+<ol>
+<li>EmojiconHandler&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;map,&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;map&#x662F;SparseIntArray&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F20;&#x7EDF;&#x7684;HashMap&#x3002;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;SparseArray&#x548C;HashMap&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://liuzhichao.com/p/832.html" target="_blank" rel="external">https://liuzhichao.com/p/832.html</a><br>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;map&#x4E3A;unicode&#x7F16;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x60C5;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;map&#x5BF9;&#x5E94;&#x7684;&#x662F;softbank&#x7F16;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x60C5;&#xFF0C;&#x90FD;&#x662F;&#x5C06;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x548C;&#x5176;&#x8D44;&#x6E90;id&#x653E;&#x5728;map&#x4E2D;&#xFF0C;&#x540E;&#x7EED;&#x7528;&#x4E8E;&#x8868;&#x60C5;&#x5904;&#x7406;.</li>
+<li></li>
 </ol>
 
       
@@ -444,24 +473,18 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/tool/" rel="tag">#tool</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/20/emojicon原理解析一/" rel="next" title="emojicon原理解析--EmojiconsFragment（一）">
+                <i class="fa fa-chevron-left"></i> emojicon原理解析--EmojiconsFragment（一）
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/13/Emoji-表情知识/" rel="prev" title="Android 仿微信表情实现原理分析">
-                Android 仿微信表情实现原理分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,8 +536,8 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/02/github-hexo-搭建专属博客/"
-           data-title="github+hexo 搭建专属博客" data-url="http://www.tongruyi.club/2016/06/02/github-hexo-搭建专属博客/">
+      <div class="ds-thread" data-thread-key="2016/06/20/Emojicon原理解析二/"
+           data-title="Emojicon原理解析二" data-url="http://www.tongruyi.club/2016/06/20/Emojicon原理解析二/">
       </div>
     
   </div>
@@ -623,7 +646,7 @@ http://www.jianshu.com/p/05289a4bc8b2&amp;#x611F;&amp;#x8C22;&amp;#x539F;&amp;#x
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#购买域名"><span class="nav-number">2.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析管理"><span class="nav-number">3.</span> <span class="nav-text">域名解析管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名设置"><span class="nav-number">4.</span> <span class="nav-text">域名设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNAME文件"><span class="nav-number">5.</span> <span class="nav-text">CNAME文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">6.</span> <span class="nav-text">问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-EditTextView"><span class="nav-number">1.</span> <span class="nav-text">一 EditTextView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-EmojiconEditText"><span class="nav-number">2.</span> <span class="nav-text">二 EmojiconEditText</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-EmojiconHandler"><span class="nav-number">3.</span> <span class="nav-text">三 EmojiconHandler</span></a></li></ol></div>
             
           </div>
         </section>

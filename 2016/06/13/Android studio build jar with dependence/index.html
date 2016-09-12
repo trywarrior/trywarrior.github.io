@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="tongruyi blog">
 <meta property="og:description" content="&amp;#x6211;&amp;#x4EEC;&amp;#x9879;&amp;#x76EE;&amp;#x7EC4;&amp;#x4E13;&amp;#x95E8;&amp;#x505A;&amp;#x80FD;&amp;#x529B;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x90FD;&amp;#x662F;&amp;#x7528;eclipse&amp;#x5F00;&amp;#x53D1;&amp;">
 <meta property="og:image" content="http://i.imgur.com/SZUFdeH.png">
-<meta property="og:updated_time" content="2016-09-12T12:16:19.193Z">
+<meta property="og:updated_time" content="2016-09-12T12:23:38.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android studio build jar with dependence">
 <meta name="twitter:description" content="&amp;#x6211;&amp;#x4EEC;&amp;#x9879;&amp;#x76EE;&amp;#x7EC4;&amp;#x4E13;&amp;#x95E8;&amp;#x505A;&amp;#x80FD;&amp;#x529B;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x90FD;&amp;#x662F;&amp;#x7528;eclipse&amp;#x5F00;&amp;#x53D1;&amp;">
@@ -380,10 +380,12 @@ classifier = &quot;release&quot;
 extension = &quot;jar&quot;
 //&#x6700;&#x7EC8;&#x7684; Jar &#x5305;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; [baseName]-[appendix]-[version]-[classifier].[extension]
 archiveName = &quot;littlec.jar&quot;
+
 //&#x9700;&#x6253;&#x5305;&#x7684;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x96C6;
 def srcClassDir = [project.buildDir.absolutePath + &quot;/intermediates/classes/release/&quot;];
 //&#x521D;&#x59CB;&#x5316;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x96C6;
 from srcClassDir
+
 //&#x53BB;&#x9664;&#x8DEF;&#x5F84;&#x96C6;&#x4E0B;&#x90E8;&#x5206;&#x7684;&#x8D44;&#x6E90;
 //exclude &quot;org/chaos/demo/jar/MainActivity.class&quot;
 //exclude &quot;org/chaos/demo/jar/MainActivity/$*.class&quot;
@@ -403,16 +405,16 @@ it.name.startsWith(&apos;META-INF&apos;);
 //&#x6CE8;: exclude include &#x652F;&#x6301;&#x53EF;&#x53D8;&#x957F;&#x53C2;&#x6570;
  exclude &quot;im/&quot;
 
-}
+}   
 </code></pre><p>&#x8FD9;&#x4E2A;task &#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x5C06;src&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#x6210;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x5982;littlec.jar&#xFF0C;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x5728;/build/libs/&#x4E0B;&#x9762;&#x3002;<br>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;<br>    &#x6253;&#x5305;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x786E;&#x8BA4;/intermediates/classes/release/&#x4E0B;&#x9762;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;Build-&gt;Make Project</p>
 <h1 id="&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"><a href="#&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;" class="headerlink" title="&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"></a>&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;</h1><p>Android&#x5DE5;&#x7A0B;&#x91CC;&#x9762;&#x6709;&#x5F88;&#x591A;&#x5728;&#x7EBF;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;&#x9879;&#x76EE;&#x5DE5;&#x7A0B;&#x91CC;&#x9762;libs&#x4E0B;&#x9762;&#x7684;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;Jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x4E2A;&#x70B9;&#x8BA9;&#x6211;&#x8D39;&#x89E3;&#x4E86;&#x597D;&#x4E45;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF1A;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x4E5F;&#x4F1A;&#x7F13;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x7528;gradle&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#xFF1F;&#x540E;&#x9762;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;<code>configurations.compile.collect</code>&#x5C31;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x662F;&#x8FD8;&#x6709;&#x5B50;&#x6811;&#xFF0C;&#x800C;<code>zipTree</code>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0B;&#x9762;&#x7684;&#x5B50;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;Task &#x7684;from &#x53EF;&#x4EE5;&#x6539;&#x4E3A;</p>
 <pre><code>configurations.compile.
-   collect {
+ collect {
 it.isDirectory() ? it : zipTree(it)
 }
 </code></pre><p>&#x8F93;&#x5165;&#x660E;&#x786E;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;META_INF&#x76EE;&#x5F55;&#x53BB;&#x6389;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x90A3;&#x5C31;&#x7A0D;&#x5FAE;&#x6539;&#x8FDB;&#x4E00;&#x4E0B;&#xFF1A;</p>
 <pre><code> configurations.compile.
-   collect {
+ collect {
 it.isDirectory() ? it : zipTree(it).matching {
 exclude{it.path.contains(&apos;META-INF&apos;)}
 }
@@ -459,7 +461,7 @@ with buildJar
 }
 </code></pre><p>&#x91CC;&#x9762;for&#x5FAA;&#x73AF;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x4F60;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x66F4;&#x6539;&#x3002;</p>
 <h1 id="&#x56DB;-&#x8FD0;&#x884C;"><a href="#&#x56DB;-&#x8FD0;&#x884C;" class="headerlink" title="&#x56DB;. &#x8FD0;&#x884C;"></a>&#x56DB;. &#x8FD0;&#x884C;</h1><pre><code>gradlew createJarWithDen &#x6216;&#x8005; gradle createJarWithDen
-</code></pre><p>&#x5E0C;&#x671B;&#x676D;&#x5DDE;&#x7684;&#x540C;&#x884C;&#x52A0;&#x5165;&#x300A;android&#x676D;&#x5DDE;&#x5730;&#x533A;&#x4EA4;&#x6D41;&#x7FA4;&#x2013; 527906545&#x300B;</p>
+</code></pre><p>&#x5E0C;&#x671B;&#x676D;&#x5DDE;&#x7684;&#x540C;&#x884C;&#x52A0;&#x5165;&#x300A;android&#x676D;&#x5DDE;&#x5730;&#x533A;&#x4EA4;&#x6D41;&#x7FA4;&#x2013; QQ&#x7FA4;527906545&#x300B;</p>
 
       
     </div>

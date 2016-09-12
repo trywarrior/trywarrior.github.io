@@ -384,51 +384,58 @@
 5.&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x63A7;&#x4EF6;&#x7C7B;&#x5B9A;&#x4E49;&#x5230;&#x5E03;&#x5C40;&#x7528;&#x7684;xml&#x6587;&#x4EF6;&#x4E2D;&#x53BB;.
 
 6.&#x5728;&#x754C;&#x9762;&#x4E2D;&#x751F;&#x6210;&#x6B64;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x7C7B;&#x5BF9;&#x8C61;,&#x5E76;&#x52A0;&#x4EE5;&#x4F7F;&#x7528;.
-</code></pre><p>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027; Emojicon&#xFF1A;</p>
-<p><code>&lt;declare-styleable name=&quot;Emojicon&quot;&gt;
-        &lt;attr name=&quot;emojiconSize&quot; format=&quot;dimension&quot; /&gt;
-        &lt;attr name=&quot;emojiconAlignment&quot; format=&quot;enum&quot;&gt;
-            &lt;enum name=&quot;bottom&quot; value=&quot;0&quot; /&gt;
-            &lt;enum name=&quot;baseline&quot; value=&quot;1&quot; /&gt;
-        &lt;/attr&gt;
-        &lt;attr name=&quot;emojiconTextStart&quot; format=&quot;integer&quot; /&gt;
-        &lt;attr name=&quot;emojiconTextLength&quot; format=&quot;integer&quot; /&gt;
-        &lt;attr name=&quot;emojiconUseSystemDefault&quot; format=&quot;boolean&quot; /&gt;
-    &lt;/declare-styleable&gt;</code><br>EditTextView&#x91CC;&#x9762;&#x7684;init&#x51FD;&#x6570;&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1A;<br>    <code>private void init(AttributeSet attrs) {
-        mEmojiconTextSize = (int) getTextSize();
-        if (attrs == null) {
-            mEmojiconSize = (int) getTextSize();
-        } else {
-            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Emojicon);
-            mEmojiconSize = (int) a.getDimension(R.styleable.Emojicon_emojiconSize, getTextSize());
-            mEmojiconAlignment = a.getInt(R.styleable.Emojicon_emojiconAlignment, DynamicDrawableSpan.ALIGN_BASELINE);
-            mTextStart = a.getInteger(R.styleable.Emojicon_emojiconTextStart, 0);
-            mTextLength = a.getInteger(R.styleable.Emojicon_emojiconTextLength, -1);
-            mUseSystemDefault = a.getBoolean(R.styleable.Emojicon_emojiconUseSystemDefault, false);
-            a.recycle();
-        }
-//        setText(getText());
-    }</code><br>&#x8868;&#x60C5;&#x8981;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#xFF0C;&#x5FC5;&#x7136;&#x8981;&#x5728;setText&#x91CC;&#x9762;&#x505A;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF1A;<br> <code>public void setText(CharSequence text, BufferType type) {
-        if (!TextUtils.isEmpty(text)) {
-            SpannableStringBuilder builder = new SpannableStringBuilder(text);
-            EmojiconHandler.addEmojis(getContext(), builder, mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mTextStart, mTextLength, mUseSystemDefault);
-            text = builder;
-        }
-        super.setText(text, type);
-    }</code><br>&#x8FD9;&#x91CC;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x7528;EmojiconHandler.addEmojis&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x6210;spannableString,&#x5C31;&#x662F;&#x5C06;&#x6587;&#x672C;&#x91CC;&#x9762;&#x7684;&#x8868;&#x60C5;unicode&#x7528;&#x672C;&#x5730;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x66FF;&#x6362;&#xFF0C;&#x518D;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#x3002;SpannableString&#x3001;SpannableStringBuilder&#x57FA;&#x672C;&#x4E0A;&#x4E0E;String&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4FE9;&#x7684;&#x7279;&#x6B8A;&#x5C31;&#x5728;&#x4E8E;&#x6709;&#x4E00;&#x4E2A;SetSpan&#xFF08;&#xFF09;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x7ED9;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x7684;String&#x6DFB;&#x52A0;&#x5404;&#x79CD;&#x683C;&#x5F0F;&#x6216;&#x8005;&#x79F0;&#x6837;&#x5F0F;&#xFF08;Span&#xFF09;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x7684;String&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x539F;&#x6765;String&#x4E0A;&#x52A0;&#x4E0B;&#x5212;&#x7EBF;&#x3001;&#x52A0;&#x80CC;&#x666F;&#x8272;&#x3001;&#x6539;&#x53D8;&#x5B57;&#x4F53;&#x989C;&#x8272;&#x3001;&#x7528;&#x56FE;&#x7247;&#x628A;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x5B57;&#x7ED9;&#x66FF;&#x6362;&#x6389;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x603B;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;SpannableString&#x3001;SpannableStringBuilder&#x4E0E;String&#x4E00;&#x6837;&#xFF0C; &#x9996;&#x5148;&#x4E5F;&#x662F;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;SpannableString&#x3001;SpannableStringBuilder&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;String&#x5219;&#x4E0D;&#x884C;&#x3002;</p>
-<h1 id="&#x4E8C;-EmojiconEditText"><a href="#&#x4E8C;-EmojiconEditText" class="headerlink" title="&#x4E8C; EmojiconEditText"></a>&#x4E8C; EmojiconEditText</h1><p>EmojiconEditText&#x7684;init&#x51FD;&#x6570;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x52A0;&#x8F7D;&#xFF0C;&#x4E0E;EditTextView&#x7C7B;&#x4F3C;&#xFF1A;<br>  <code>private void init(AttributeSet attrs) {
+</code></pre><p>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027; Emojicon&#xFF1A;  </p>
+<pre><code>` &lt;declare-styleable name=&quot;Emojicon&quot;&gt;
+ &lt;attr name=&quot;emojiconSize&quot; format=&quot;dimension&quot; /&gt;
+ &lt;attr name=&quot;emojiconAlignment&quot; format=&quot;enum&quot;&gt;
+ &lt;enum name=&quot;bottom&quot; value=&quot;0&quot; /&gt;
+ &lt;enum name=&quot;baseline&quot; value=&quot;1&quot; /&gt;
+ &lt;/attr&gt;
+&lt;attr name=&quot;emojiconTextStart&quot; format=&quot;integer&quot; /&gt;
+&lt;attr name=&quot;emojiconTextLength&quot; format=&quot;integer&quot; /&gt;
+ &lt;attr name=&quot;emojiconUseSystemDefault&quot; format=&quot;boolean&quot; /&gt;
+&lt;/declare-styleable&gt;`
+</code></pre><p>EditTextView&#x91CC;&#x9762;&#x7684;init&#x51FD;&#x6570;&#x52A0;&#x8F7D;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1A;</p>
+<pre><code>`  private void init(AttributeSet attrs) {
+    mEmojiconTextSize = (int) getTextSize();
+    if (attrs == null) {
+        mEmojiconSize = (int) getTextSize();
+    } else {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Emojicon);
         mEmojiconSize = (int) a.getDimension(R.styleable.Emojicon_emojiconSize, getTextSize());
         mEmojiconAlignment = a.getInt(R.styleable.Emojicon_emojiconAlignment, DynamicDrawableSpan.ALIGN_BASELINE);
+        mTextStart = a.getInteger(R.styleable.Emojicon_emojiconTextStart, 0);
+        mTextLength = a.getInteger(R.styleable.Emojicon_emojiconTextLength, -1);
         mUseSystemDefault = a.getBoolean(R.styleable.Emojicon_emojiconUseSystemDefault, false);
         a.recycle();
-        mEmojiconTextSize = (int) getTextSize();
-//        setText(getText());
-    }</code><br>&#x91CD;&#x5199;onTextChanged:<br>  <code>protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
-        updateText();
-    }</code><br>&#x91CC;&#x9762;&#x8C03;&#x7528;&#x4E86;updateText():<br><code>private void updateText() {
-        EmojiconHandler.addEmojis(getContext(), getText(), mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mUseSystemDefault);
-    }</code><br>&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x8C03;&#x7528;&#x4E86; EmojiconHandler.addEmojis&#xFF0C;&#x7136;&#x540E;&#x5728;EmojiconHandler&#x91CC;&#x9762;&#x5BF9;EditText&#x4F5C;&#x5904;&#x7406;&#x3002;</p>
+    }
+</code></pre><p>//        setText(getText());<br>    }`<br>&#x8868;&#x60C5;&#x8981;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#xFF0C;&#x5FC5;&#x7136;&#x8981;&#x5728;setText&#x91CC;&#x9762;&#x505A;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>     public void setText(CharSequence text, BufferType type) {
+         if (!TextUtils.isEmpty(text)) {
+        SpannableStringBuilder builder = new SpannableStringBuilder(text);
+        EmojiconHandler.addEmojis(getContext(), builder, mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mTextStart, mTextLength, mUseSystemDefault);
+        text = builder;
+    }
+    super.setText(text, type);
+}
+</code></pre><p>&#x8FD9;&#x91CC;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x7528;EmojiconHandler.addEmojis&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x6210;spannableString,&#x5C31;&#x662F;&#x5C06;&#x6587;&#x672C;&#x91CC;&#x9762;&#x7684;&#x8868;&#x60C5;unicode&#x7528;&#x672C;&#x5730;&#x8868;&#x60C5;&#x56FE;&#x7247;&#x66FF;&#x6362;&#xFF0C;&#x518D;&#x5728;TextView&#x91CC;&#x9762;&#x663E;&#x793A;&#x3002;SpannableString&#x3001;SpannableStringBuilder&#x57FA;&#x672C;&#x4E0A;&#x4E0E;String&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;&#x5B83;&#x4EEC;&#x4FE9;&#x7684;&#x7279;&#x6B8A;&#x5C31;&#x5728;&#x4E8E;&#x6709;&#x4E00;&#x4E2A;SetSpan&#xFF08;&#xFF09;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x7ED9;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x7684;String&#x6DFB;&#x52A0;&#x5404;&#x79CD;&#x683C;&#x5F0F;&#x6216;&#x8005;&#x79F0;&#x6837;&#x5F0F;&#xFF08;Span&#xFF09;&#xFF0C;&#x5C06;&#x539F;&#x6765;&#x7684;String&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x6837;&#x5F0F;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x539F;&#x6765;String&#x4E0A;&#x52A0;&#x4E0B;&#x5212;&#x7EBF;&#x3001;&#x52A0;&#x80CC;&#x666F;&#x8272;&#x3001;&#x6539;&#x53D8;&#x5B57;&#x4F53;&#x989C;&#x8272;&#x3001;&#x7528;&#x56FE;&#x7247;&#x628A;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x5B57;&#x7ED9;&#x66FF;&#x6362;&#x6389;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x603B;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;SpannableString&#x3001;SpannableStringBuilder&#x4E0E;String&#x4E00;&#x6837;&#xFF0C; &#x9996;&#x5148;&#x4E5F;&#x662F;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F46;SpannableString&#x3001;SpannableStringBuilder&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;String&#x5219;&#x4E0D;&#x884C;&#x3002;</p>
+<h1 id="&#x4E8C;-EmojiconEditText"><a href="#&#x4E8C;-EmojiconEditText" class="headerlink" title="&#x4E8C; EmojiconEditText"></a>&#x4E8C; EmojiconEditText</h1><p>EmojiconEditText&#x7684;init&#x51FD;&#x6570;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x52A0;&#x8F7D;&#xFF0C;&#x4E0E;EditTextView&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code>`private void init(AttributeSet attrs) {
+   TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Emojicon);
+   mEmojiconSize = (int) a.getDimension(R.styleable.Emojicon_emojiconSize, getTextSize());
+   mEmojiconAlignment = a.getInt(R.styleable.Emojicon_emojiconAlignment, DynamicDrawableSpan.ALIGN_BASELINE);
+   mUseSystemDefault = a.getBoolean(R.styleable.Emojicon_emojiconUseSystemDefault, false);
+   a.recycle();
+   mEmojiconTextSize = (int) getTextSize();
+</code></pre><p>//        setText(getText());<br>    }`<br>&#x91CD;&#x5199;onTextChanged:</p>
+<pre><code>  `   protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
+    updateText();
+}`
+</code></pre><p>&#x91CC;&#x9762;&#x8C03;&#x7528;&#x4E86;updateText():</p>
+<pre><code>`private void updateText() {
+    EmojiconHandler.addEmojis(getContext(), getText(), mEmojiconSize, mEmojiconAlignment, mEmojiconTextSize, mUseSystemDefault);
+}`
+</code></pre><p>&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x8C03;&#x7528;&#x4E86; EmojiconHandler.addEmojis&#xFF0C;&#x7136;&#x540E;&#x5728;EmojiconHandler&#x91CC;&#x9762;&#x5BF9;EditText&#x4F5C;&#x5904;&#x7406;&#x3002;</p>
 <h1 id="&#x4E09;-EmojiconHandler"><a href="#&#x4E09;-EmojiconHandler" class="headerlink" title="&#x4E09; EmojiconHandler"></a>&#x4E09; EmojiconHandler</h1><p>&#x524D;&#x9762;&#x4E8C;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x4E86;&#x8BE5;&#x7C7B;&#x7684;addEmojis&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x6587;&#x672C;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x5177;&#x4F53;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
 <ol>
 <li>EmojiconHandler&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;map,&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;map&#x662F;SparseIntArray&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F20;&#x7EDF;&#x7684;HashMap&#x3002;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;SparseArray&#x548C;HashMap&#x7684;&#x4F18;&#x7F3A;&#x70B9;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://liuzhichao.com/p/832.html" target="_blank" rel="external">https://liuzhichao.com/p/832.html</a><br>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;map&#x4E3A;unicode&#x7F16;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x60C5;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;map&#x5BF9;&#x5E94;&#x7684;&#x662F;softbank&#x7F16;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x60C5;&#xFF0C;&#x90FD;&#x662F;&#x5C06;&#x8868;&#x60C5;&#x5BF9;&#x5E94;&#x7684;unicode&#x548C;&#x5176;&#x8D44;&#x6E90;id&#x653E;&#x5728;map&#x4E2D;&#xFF0C;&#x540E;&#x7EED;&#x7528;&#x4E8E;&#x8868;&#x60C5;&#x5904;&#x7406;.</li>
@@ -569,6 +576,167 @@ return fragment;
 <p>onCreateView&#x51FD;&#x6570;,&#x521D;&#x59CB;&#x5316;EmojisPagerAdapter&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;fragment&#x7684;&#x6570;&#x7EC4;<br>    <code>mEmojisAdapter = new EmojisPagerAdapter(getFragmentManager(), Arrays.asList(EmojiconRecentsGridFragment.newInstance(mUseSystemDefault), EmojiconGridFragment.newInstance(People.DATA, recents, mUseSystemDefault),   EmojiconGridFragment.newInstance(Nature.DATA, recents, mUseSystemDefault),EmojiconGridFragment.newInstance(Objects.DATA, recents, mUseSystemDefault),EmojiconGridFragment.newInstance(Places.DATA, recents, mUseSystemDefault),EmojiconGridFragment.newInstance(Symbols.DATA, recents, mUseSystemDefault) ));</code><br>&#x63D0;&#x4EA4;&#x4E86;6&#x4E2A;fragment&#xFF0C;&#x5E76;&#x4E14;&#x5BF9;&#x6BCF;&#x4E2A;view&#x8BBE;&#x7F6E;&#x76D1;&#x542C;&#x3002;<br>EmojiconGridFragment onCreateView&#x52A0;&#x8F7D;emojicon_grid &#x521B;&#x5EFA;&#x4E00;&#x4E2A;View&#xFF1A;<br> <code>inflater.inflate(R.layout.emojicon_grid, container, false)</code><br>onViewCreated&#x51FD;&#x6570;&#x5BF9;gridview&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;Adapter:</p>
 <pre><code>gridView.setAdapter(new EmojiAdapter(view.getContext(), mData, mUseSystemDefault));
 </code></pre><p>EmojiAdapter:<br> EmojiAdapter&#x91CC;&#x9762;&#x7684;Holder&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x63A7;&#x4EF6;EmojiconTextView, &#x8BE5;&#x63A7;&#x4EF6;&#x901A;&#x8FC7;&#x83B7;&#x53D6;Emojicon&#x91CC;&#x9762;&#x7684;emoji&#x5B57;&#x6BB5;&#x6765;&#x663E;&#x793A;&#x3002;&#x8FD9;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;TextView&#x540E;&#x7EED;&#x518D;&#x4ECB;&#x7ECD;&#x3002;<br>&#x6574;&#x4E2A;EmojiconsFragment&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;<img src="/2016/06/20/emojicon&#x539F;&#x7406;&#x89E3;&#x6790;&#x4E00;/flow.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/13/Android studio build jar with dependence/" itemprop="url">
+                  Android studio build jar with dependence
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T19:09:52+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/Android studio build jar with dependence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/Android studio build jar with dependence/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/13/Android studio build jar with dependence/" class="leancloud_visitors" data-flag-title="Android studio build jar with dependence">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+		  
+		  
+		  
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&#x6211;&#x4EEC;&#x9879;&#x76EE;&#x7EC4;&#x4E13;&#x95E8;&#x505A;&#x80FD;&#x529B;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x524D;&#x9762;&#x7684;&#x7248;&#x672C;&#x90FD;&#x662F;&#x7528;eclipse&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x540E;&#x9762;&#x8FC1;&#x79FB;&#x5230;android studio&#x8FD8;&#x662F;&#x7528;eclipse&#x91CC;&#x9762;&#x7684;FatJar&#x6253;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x62D6;&#x4E86;&#x4E00;&#x4E2A;&#x6708;&#xFF0C;&#x6700;&#x8FD1;&#x7A81;&#x51FB;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x8BA9;&#x66F4;&#x591A;&#x4EBA;&#x5438;&#x53D6;&#x7ECF;&#x9A8C;&#x3002;<br>&#x5BF9;gradle&#x4E0D;&#x719F;&#x6089;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x770B; Gradle User Guide&#x4E2D;&#x6587;&#x7248;<a href="https://dongchuan.gitbooks.io/gradle-user-guide-/content/tutorials/" title="Gradle &#x4E2D;&#x6587;&#x7248;" target="_blank" rel="external">https://dongchuan.gitbooks.io/gradle-user-guide-/content/tutorials/</a><br>&#x82F1;&#x8BED;&#x80FD;&#x529B;&#x5F3A;&#x5730;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x82F1;&#x6587;&#x7248; <a href="https://docs.gradle.org/current/userguide/userguide_single.html" title="Gradle User Guide" target="_blank" rel="external">https://docs.gradle.org/current/userguide/userguide_single.html</a></p>
+<h1 id="&#x4E00;-&#x5206;&#x6790;dependencies"><a href="#&#x4E00;-&#x5206;&#x6790;dependencies" class="headerlink" title="&#x4E00;. &#x5206;&#x6790;dependencies"></a>&#x4E00;. &#x5206;&#x6790;dependencies</h1><p>&#x6307;&#x4EE4;<code>gradle App:dependencies</code> &#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6811;&#xFF0C;&#x901A;&#x8FC7;&#x4F9D;&#x8D56;&#x6811;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x51FA;&#x81EA;&#x5DF1;&#x7684;Jar&#x5305;&#x9700;&#x8981;&#x5305;&#x62EC;&#x54EA;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;jar&#x3002;<br><img src="http://i.imgur.com/SZUFdeH.png" alt=""></p>
+<h1 id="&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"><a href="#&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;" class="headerlink" title="&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"></a>&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;</h1><p>&#x9996;&#x5148;&#x5148;&#x6765;&#x770B;&#x770B;&#x600E;&#x6837;&#x5C06;&#x81EA;&#x5DF1;src&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#xFF0C;&#x4E0D;&#x5E9F;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x8D34;&#x51FA;&#x4EE3;&#x7801;&#xFF1A;<br>    task buildJar(dependsOn: [build], type: Jar) {<br>    appendix = &#x201C;demo&#x201D;<br>    baseName = &#x201C;androidJar&#x201D;<br>    version = &#x201C;1.0.0&#x201D;<br>    classifier = &#x201C;release&#x201D;<br>    //&#x540E;&#x7F00;&#x540D;<br>    extension = &#x201C;jar&#x201D;<br>    //&#x6700;&#x7EC8;&#x7684; Jar &#x5305;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; [baseName]-[appendix]-[version]-[classifier].[extension]<br>    archiveName = &#x201C;littlec.jar&#x201D;</p>
+<pre><code>//&#x9700;&#x6253;&#x5305;&#x7684;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x96C6;
+def srcClassDir = [project.buildDir.absolutePath + &quot;/intermediates/classes/release/&quot;];
+//&#x521D;&#x59CB;&#x5316;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x96C6;
+from srcClassDir
+
+//&#x53BB;&#x9664;&#x8DEF;&#x5F84;&#x96C6;&#x4E0B;&#x90E8;&#x5206;&#x7684;&#x8D44;&#x6E90;
+//exclude &quot;org/chaos/demo/jar/MainActivity.class&quot;
+//exclude &quot;org/chaos/demo/jar/MainActivity/$*.class&quot;
+//&#x53BB;&#x6389;&#x4E0D;&#x9700;&#x8981;&#x6253;&#x5305;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;
+exclude(&apos;test/&apos;, &apos;BuildConfig.class&apos;, &apos;R.class&apos;)
+//&#x53BB;&#x6389;R$&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;
+exclude { it.name.startsWith(&apos;R$&apos;); }
+
+//&#x53BB;&#x6389;&#x4E0D;&#x9700;&#x8981;&#x6253;&#x5305;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;
+exclude(&apos;test/&apos;, &apos;BuildConfig.class&apos;, &apos;R.class&apos;, &apos;androidTest/&apos;)
+exclude(&apos;META-INF/&apos;)
+//&#x53BB;&#x6389;R$&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;
+exclude { it.name.startsWith(&apos;R$&apos;);
+//it.name.startsWith(&apos;org.apache.thrift&apos;);
+it.name.startsWith(&apos;META-INF&apos;);
+}
+//&#x6CE8;: exclude include &#x652F;&#x6301;&#x53EF;&#x53D8;&#x957F;&#x53C2;&#x6570;
+ exclude &quot;im/&quot;
+
+}
+</code></pre><p>&#x8FD9;&#x4E2A;task &#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x5C06;src&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#x6210;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x5982;littlec.jar&#xFF0C;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x5728;/build/libs/&#x4E0B;&#x9762;&#x3002;<br>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;<br>    &#x6253;&#x5305;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x786E;&#x8BA4;/intermediates/classes/release/&#x4E0B;&#x9762;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;Build-&gt;Make Project</p>
+<h1 id="&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"><a href="#&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;" class="headerlink" title="&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"></a>&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;</h1><p>Android&#x5DE5;&#x7A0B;&#x91CC;&#x9762;&#x6709;&#x5F88;&#x591A;&#x5728;&#x7EBF;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;&#x9879;&#x76EE;&#x5DE5;&#x7A0B;&#x91CC;&#x9762;libs&#x4E0B;&#x9762;&#x7684;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;Jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x4E2A;&#x70B9;&#x8BA9;&#x6211;&#x8D39;&#x89E3;&#x4E86;&#x597D;&#x4E45;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF1A;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x4E5F;&#x4F1A;&#x7F13;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x7528;gradle&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#xFF1F;&#x540E;&#x9762;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;<code>configurations.compile.collect</code>&#x5C31;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x662F;&#x8FD8;&#x6709;&#x5B50;&#x6811;&#xFF0C;&#x800C;<code>zipTree</code>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0B;&#x9762;&#x7684;&#x5B50;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;Task &#x7684;from &#x53EF;&#x4EE5;&#x6539;&#x4E3A;<br>    <code>configurations.compile.
+       collect {
+    it.isDirectory() ? it : zipTree(it)
+    }</code><br>&#x8F93;&#x5165;&#x660E;&#x786E;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;META_INF&#x76EE;&#x5F55;&#x53BB;&#x6389;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x90A3;&#x5C31;&#x7A0D;&#x5FAE;&#x6539;&#x8FDB;&#x4E00;&#x4E0B;&#xFF1A;<br>    <code>configurations.compile.
+       collect {
+    it.isDirectory() ? it : zipTree(it).matching {
+    exclude{it.path.contains(&apos;META-INF&apos;)}
+    }
+    }</code><br>&#x5982;&#x679C;&#x662F;&#x6587;&#x4EF6;&#x5939;&#x5BF9;&#x5176;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x90FD;&#x5339;&#x914D;&#x4E00;&#x4E0B;META-INF&#xFF0C;&#x8FDB;&#x800C;&#x6392;&#x9664; META-INF&#x6587;&#x4EF6;&#x5939;&#x3002;<br>&#x4E0A;&#x9762;&#x6392;&#x9664;&#x4E86;META-INF&#x7B49;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x5C06;&#x6240;&#x6709;&#x5728;dependencies&#x91CC;&#x9762;&#x4F9D;&#x8D56;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x6253;&#x5305;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x5F88;&#x4F18;&#x96C5;&#x5730;&#x5C06;&#x8FD9;&#x4E9B;&#x5305;&#x8FDB;&#x884C;&#x5220;&#x9009;&#x4E86;&#xFF1F;&#x800C;&#x4E14;&#x4E0D;&#x5F71;&#x54CD;&#x6B63;&#x5E38;&#x7684;&#x7F16;&#x8BD1;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x52A0;&#x5165;<br><code>configurations{
+    retain
+    compile.extendsFrom retain
+}</code><br>&#x5E76;&#x4E14;&#x5C06;dependencies&#x91CC;&#x9762;&#x5C06;&#x81EA;&#x5DF1;&#x4E0D;&#x60F3;&#x6253;&#x5305;&#x7684;compile &#x4FEE;&#x6539;&#x4E3A; retain&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<blockquote>
+<p>`dependencies {</p>
+<pre><code>retain &apos;javax.annotation:javax.annotation-api:1.2&apos;
+</code></pre><p>}<code>&#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</code>(configurations.compile-configurations.retain).<br>    collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }<br>    }<code>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;
+&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</code>task createJarWithDen(type: Jar) {<br>    baseName = &#x201C;littlec&#x201D;<br>    from {<br>     List list= (configurations.compile-configurations.retain).<br>       collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }<br>    }<br>       List<objectremovelist=new arraylist<="">();<br>    for(Object object:list){<br>    println(object.toString());<br>    if(object.toString().contains(&#x201C;jsr&#x201D;)) {<br>    removeList.add(object)<br>    println(&#x201C;jsrObject remove&#x201D;)<br>    }else if(object.toString().contains(&#x201C;javax.annotation&#x201D;)){<br>    removeList.add(object)<br>    println(&#x201C;annotation remove&#x201D;)<br>    }else if(object.toString().contains(&#x201C;MiPush_SDK_Client&#x201D;)){<br>    removeList.add(object)<br>    println(&#x201C;MiPush_SDK_Client remove&#x201D;)<br>    }<br>    }<br>    list.removeAll(removeList)<br>    return list;<br>    }<br>    with buildJar<br>    }`<br>&#x91CC;&#x9762;for&#x5FAA;&#x73AF;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x4F60;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x66F4;&#x6539;&#x3002;</objectremovelist=new></p>
+<h1 id="&#x56DB;-&#x8FD0;&#x884C;"><a href="#&#x56DB;-&#x8FD0;&#x884C;" class="headerlink" title="&#x56DB;. &#x8FD0;&#x884C;"></a>&#x56DB;. &#x8FD0;&#x884C;</h1><pre><code>gradlew createJarWithDen &#x6216;&#x8005; `gradle createJarWithDen`
+</code></pre></blockquote>
+<p>&#x5E0C;&#x671B;&#x676D;&#x5DDE;&#x7684;&#x540C;&#x884C;&#x52A0;&#x5165;&#x300A;android&#x676D;&#x5DDE;&#x5730;&#x533A;&#x4EA4;&#x6D41;&#x7FA4;&#x2013; 527906545&#x300B;</p>
 
           
         
@@ -951,7 +1119,7 @@ return fragment;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>

@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="tongruyi blog">
 <meta property="og:description" content="&amp;#x6211;&amp;#x4EEC;&amp;#x9879;&amp;#x76EE;&amp;#x7EC4;&amp;#x4E13;&amp;#x95E8;&amp;#x505A;&amp;#x80FD;&amp;#x529B;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x90FD;&amp;#x662F;&amp;#x7528;eclipse&amp;#x5F00;&amp;#x53D1;&amp;">
 <meta property="og:image" content="http://www.tongruyi.club/2016/06/13/Android studio build jar with dependence/AndroidStudioBuildJar/dependencies.png">
-<meta property="og:updated_time" content="2016-09-12T12:32:40.740Z">
+<meta property="og:updated_time" content="2016-09-12T12:38:12.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android studio build jar with dependence">
 <meta name="twitter:description" content="&amp;#x6211;&amp;#x4EEC;&amp;#x9879;&amp;#x76EE;&amp;#x7EC4;&amp;#x4E13;&amp;#x95E8;&amp;#x505A;&amp;#x80FD;&amp;#x529B;&amp;#x5F00;&amp;#x53D1;&amp;#x7684;&amp;#xFF0C;&amp;#x524D;&amp;#x9762;&amp;#x7684;&amp;#x7248;&amp;#x672C;&amp;#x90FD;&amp;#x662F;&amp;#x7528;eclipse&amp;#x5F00;&amp;#x53D1;&amp;">
@@ -204,7 +204,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -224,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -257,7 +257,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            Suche
           </a>
         </li>
       
@@ -320,7 +320,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Posted on</span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
             <time itemprop="dateCreated" datetime="2016-06-13T19:09:52+08:00" content="2016-06-13">
               2016-06-13
             </time>
@@ -429,7 +429,13 @@ compile.extendsFrom retain
 retain &apos;javax.annotation:javax.annotation-api:1.2&apos;
 
 }
-</code></pre><p> &#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;<br>    (configurations.compile-configurations.retain).<br>    collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }</p>
+</code></pre><p> &#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>   <code>(configurations.compile-configurations.retain).
+           collect {
+            it.isDirectory() ? it : zipTree(it).matching {
+                exclude{it.path.contains(&apos;META-INF&apos;)}
+            }
+        }</code></p>
 <p>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;<br>&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</p>
 <pre><code>task createJarWithDen(type: Jar) {
 baseName = &quot;littlec&quot;
@@ -607,10 +613,10 @@ with buildJar
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -627,7 +633,7 @@ with buildJar
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">posts</span>
+              <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
 
@@ -637,7 +643,7 @@ with buildJar
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -717,7 +723,7 @@ with buildJar
 </div>
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

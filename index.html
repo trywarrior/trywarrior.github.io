@@ -750,13 +750,13 @@ retain &apos;javax.annotation:javax.annotation-api:1.2&apos;
 
 }
 </code></pre><p> &#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>   <code>(configurations.compile-configurations.retain).
-           collect {
-            it.isDirectory() ? it : zipTree(it).matching {
-                exclude{it.path.contains(&apos;META-INF&apos;)}
-            }
-        }</code></p>
-<p>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;<br>&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</p>
+<pre><code>`(configurations.compile-configurations.retain).
+       collect {
+        it.isDirectory() ? it : zipTree(it).matching {
+            exclude{it.path.contains(&apos;META-INF&apos;)}
+        }
+    }`
+</code></pre><p>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;<br>&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</p>
 <pre><code>task createJarWithDen(type: Jar) {
 baseName = &quot;littlec&quot;
 from {

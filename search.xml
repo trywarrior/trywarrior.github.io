@@ -112,12 +112,20 @@ return fragment;
       <url>http://www.tongruyi.club/2016/06/13/Android%20studio%20build%20jar%20with%20dependence/</url>
       <content type="html"><![CDATA[<p>&#x6211;&#x4EEC;&#x9879;&#x76EE;&#x7EC4;&#x4E13;&#x95E8;&#x505A;&#x80FD;&#x529B;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x524D;&#x9762;&#x7684;&#x7248;&#x672C;&#x90FD;&#x662F;&#x7528;eclipse&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x540E;&#x9762;&#x8FC1;&#x79FB;&#x5230;android studio&#x8FD8;&#x662F;&#x7528;eclipse&#x91CC;&#x9762;&#x7684;FatJar&#x6253;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x62D6;&#x4E86;&#x4E00;&#x4E2A;&#x6708;&#xFF0C;&#x6700;&#x8FD1;&#x7A81;&#x51FB;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x8BA9;&#x66F4;&#x591A;&#x4EBA;&#x5438;&#x53D6;&#x7ECF;&#x9A8C;&#x3002;<br>&#x5BF9;gradle&#x4E0D;&#x719F;&#x6089;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x770B; Gradle User Guide&#x4E2D;&#x6587;&#x7248;<a href="https://dongchuan.gitbooks.io/gradle-user-guide-/content/tutorials/" title="Gradle &#x4E2D;&#x6587;&#x7248;" target="_blank" rel="external">https://dongchuan.gitbooks.io/gradle-user-guide-/content/tutorials/</a><br>&#x82F1;&#x8BED;&#x80FD;&#x529B;&#x5F3A;&#x5730;&#x4E5F;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x82F1;&#x6587;&#x7248; <a href="https://docs.gradle.org/current/userguide/userguide_single.html" title="Gradle User Guide" target="_blank" rel="external">https://docs.gradle.org/current/userguide/userguide_single.html</a></p>
 <h1 id="&#x4E00;-&#x5206;&#x6790;dependencies"><a href="#&#x4E00;-&#x5206;&#x6790;dependencies" class="headerlink" title="&#x4E00;. &#x5206;&#x6790;dependencies"></a>&#x4E00;. &#x5206;&#x6790;dependencies</h1><p>&#x6307;&#x4EE4;<code>gradle App:dependencies</code> &#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x4F9D;&#x8D56;&#x6811;&#xFF0C;&#x901A;&#x8FC7;&#x4F9D;&#x8D56;&#x6811;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x51FA;&#x81EA;&#x5DF1;&#x7684;Jar&#x5305;&#x9700;&#x8981;&#x5305;&#x62EC;&#x54EA;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;jar&#x3002;<br><img src="http://i.imgur.com/SZUFdeH.png" alt=""></p>
-<h1 id="&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"><a href="#&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;" class="headerlink" title="&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"></a>&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;</h1><p>&#x9996;&#x5148;&#x5148;&#x6765;&#x770B;&#x770B;&#x600E;&#x6837;&#x5C06;&#x81EA;&#x5DF1;src&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#xFF0C;&#x4E0D;&#x5E9F;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x8D34;&#x51FA;&#x4EE3;&#x7801;&#xFF1A;<br>    task buildJar(dependsOn: [build], type: Jar) {<br>    appendix = &#x201C;demo&#x201D;<br>    baseName = &#x201C;androidJar&#x201D;<br>    version = &#x201C;1.0.0&#x201D;<br>    classifier = &#x201C;release&#x201D;<br>    //&#x540E;&#x7F00;&#x540D;<br>    extension = &#x201C;jar&#x201D;<br>    //&#x6700;&#x7EC8;&#x7684; Jar &#x5305;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; [baseName]-[appendix]-[version]-[classifier].[extension]<br>    archiveName = &#x201C;littlec.jar&#x201D;</p>
-<pre><code>//&#x9700;&#x6253;&#x5305;&#x7684;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x96C6;
+<h1 id="&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"><a href="#&#x4E8C;-&#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;" class="headerlink" title="&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;"></a>&#x4E8C;. &#x6253;&#x5305;src&#x4E0B;&#x9762;&#x7684;java&#x6587;&#x4EF6;</h1><p>&#x9996;&#x5148;&#x5148;&#x6765;&#x770B;&#x770B;&#x600E;&#x6837;&#x5C06;&#x81EA;&#x5DF1;src&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#xFF0C;&#x4E0D;&#x5E9F;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x8D34;&#x51FA;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>task buildJar(dependsOn: [build], type: Jar) {
+appendix = &quot;demo&quot;
+baseName = &quot;androidJar&quot;
+version = &quot;1.0.0&quot;
+classifier = &quot;release&quot;
+//&#x540E;&#x7F00;&#x540D;
+extension = &quot;jar&quot;
+//&#x6700;&#x7EC8;&#x7684; Jar &#x5305;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x8BBE;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; [baseName]-[appendix]-[version]-[classifier].[extension]
+archiveName = &quot;littlec.jar&quot;
+//&#x9700;&#x6253;&#x5305;&#x7684;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#x96C6;
 def srcClassDir = [project.buildDir.absolutePath + &quot;/intermediates/classes/release/&quot;];
 //&#x521D;&#x59CB;&#x5316;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x96C6;
 from srcClassDir
-
 //&#x53BB;&#x9664;&#x8DEF;&#x5F84;&#x96C6;&#x4E0B;&#x90E8;&#x5206;&#x7684;&#x8D44;&#x6E90;
 //exclude &quot;org/chaos/demo/jar/MainActivity.class&quot;
 //exclude &quot;org/chaos/demo/jar/MainActivity/$*.class&quot;
@@ -139,26 +147,61 @@ it.name.startsWith(&apos;META-INF&apos;);
 
 }
 </code></pre><p>&#x8FD9;&#x4E2A;task &#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x5C06;src&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x5305;&#x6210;&#x6307;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x5982;littlec.jar&#xFF0C;&#x751F;&#x6210;&#x76EE;&#x5F55;&#x5728;/build/libs/&#x4E0B;&#x9762;&#x3002;<br>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;<br>    &#x6253;&#x5305;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x786E;&#x8BA4;/intermediates/classes/release/&#x4E0B;&#x9762;&#x5B58;&#x5728;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x4E00;&#x4E0B;&#xFF0C;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;Build-&gt;Make Project</p>
-<h1 id="&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"><a href="#&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;" class="headerlink" title="&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"></a>&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;</h1><p>Android&#x5DE5;&#x7A0B;&#x91CC;&#x9762;&#x6709;&#x5F88;&#x591A;&#x5728;&#x7EBF;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;&#x9879;&#x76EE;&#x5DE5;&#x7A0B;&#x91CC;&#x9762;libs&#x4E0B;&#x9762;&#x7684;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;Jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x4E2A;&#x70B9;&#x8BA9;&#x6211;&#x8D39;&#x89E3;&#x4E86;&#x597D;&#x4E45;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF1A;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x4E5F;&#x4F1A;&#x7F13;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x7528;gradle&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#xFF1F;&#x540E;&#x9762;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;<code>configurations.compile.collect</code>&#x5C31;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x662F;&#x8FD8;&#x6709;&#x5B50;&#x6811;&#xFF0C;&#x800C;<code>zipTree</code>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0B;&#x9762;&#x7684;&#x5B50;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;Task &#x7684;from &#x53EF;&#x4EE5;&#x6539;&#x4E3A;<br>    <code>configurations.compile.
-       collect {
-    it.isDirectory() ? it : zipTree(it)
-    }</code><br>&#x8F93;&#x5165;&#x660E;&#x786E;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;META_INF&#x76EE;&#x5F55;&#x53BB;&#x6389;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x90A3;&#x5C31;&#x7A0D;&#x5FAE;&#x6539;&#x8FDB;&#x4E00;&#x4E0B;&#xFF1A;<br>    <code>configurations.compile.
-       collect {
-    it.isDirectory() ? it : zipTree(it).matching {
-    exclude{it.path.contains(&apos;META-INF&apos;)}
-    }
-    }</code><br>&#x5982;&#x679C;&#x662F;&#x6587;&#x4EF6;&#x5939;&#x5BF9;&#x5176;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x90FD;&#x5339;&#x914D;&#x4E00;&#x4E0B;META-INF&#xFF0C;&#x8FDB;&#x800C;&#x6392;&#x9664; META-INF&#x6587;&#x4EF6;&#x5939;&#x3002;<br>&#x4E0A;&#x9762;&#x6392;&#x9664;&#x4E86;META-INF&#x7B49;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x5C06;&#x6240;&#x6709;&#x5728;dependencies&#x91CC;&#x9762;&#x4F9D;&#x8D56;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x6253;&#x5305;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x5F88;&#x4F18;&#x96C5;&#x5730;&#x5C06;&#x8FD9;&#x4E9B;&#x5305;&#x8FDB;&#x884C;&#x5220;&#x9009;&#x4E86;&#xFF1F;&#x800C;&#x4E14;&#x4E0D;&#x5F71;&#x54CD;&#x6B63;&#x5E38;&#x7684;&#x7F16;&#x8BD1;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x52A0;&#x5165;<br><code>configurations{
-    retain
-    compile.extendsFrom retain
-}</code><br>&#x5E76;&#x4E14;&#x5C06;dependencies&#x91CC;&#x9762;&#x5C06;&#x81EA;&#x5DF1;&#x4E0D;&#x60F3;&#x6253;&#x5305;&#x7684;compile &#x4FEE;&#x6539;&#x4E3A; retain&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<blockquote>
-<p>`dependencies {</p>
-<pre><code>retain &apos;javax.annotation:javax.annotation-api:1.2&apos;
-</code></pre><p>}<code>&#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</code>(configurations.compile-configurations.retain).<br>    collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }<br>    }<code>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;
-&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</code>task createJarWithDen(type: Jar) {<br>    baseName = &#x201C;littlec&#x201D;<br>    from {<br>     List list= (configurations.compile-configurations.retain).<br>       collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }<br>    }<br>       List<objectremovelist=new arraylist<="">();<br>    for(Object object:list){<br>    println(object.toString());<br>    if(object.toString().contains(&#x201C;jsr&#x201D;)) {<br>    removeList.add(object)<br>    println(&#x201C;jsrObject remove&#x201D;)<br>    }else if(object.toString().contains(&#x201C;javax.annotation&#x201D;)){<br>    removeList.add(object)<br>    println(&#x201C;annotation remove&#x201D;)<br>    }else if(object.toString().contains(&#x201C;MiPush_SDK_Client&#x201D;)){<br>    removeList.add(object)<br>    println(&#x201C;MiPush_SDK_Client remove&#x201D;)<br>    }<br>    }<br>    list.removeAll(removeList)<br>    return list;<br>    }<br>    with buildJar<br>    }`<br>&#x91CC;&#x9762;for&#x5FAA;&#x73AF;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x4F60;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x66F4;&#x6539;&#x3002;</objectremovelist=new></p>
-<h1 id="&#x56DB;-&#x8FD0;&#x884C;"><a href="#&#x56DB;-&#x8FD0;&#x884C;" class="headerlink" title="&#x56DB;. &#x8FD0;&#x884C;"></a>&#x56DB;. &#x8FD0;&#x884C;</h1><pre><code>gradlew createJarWithDen &#x6216;&#x8005; `gradle createJarWithDen`
-</code></pre></blockquote>
-<p>&#x5E0C;&#x671B;&#x676D;&#x5DDE;&#x7684;&#x540C;&#x884C;&#x52A0;&#x5165;&#x300A;android&#x676D;&#x5DDE;&#x5730;&#x533A;&#x4EA4;&#x6D41;&#x7FA4;&#x2013; 527906545&#x300B;</p>
+<h1 id="&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"><a href="#&#x4E09;-&#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;" class="headerlink" title="&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;"></a>&#x4E09;. &#x5C06;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x548C;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#x6253;&#x5305;</h1><p>Android&#x5DE5;&#x7A0B;&#x91CC;&#x9762;&#x6709;&#x5F88;&#x591A;&#x5728;&#x7EBF;&#x4F9D;&#x8D56;&#x4EE5;&#x53CA;&#x9879;&#x76EE;&#x5DE5;&#x7A0B;&#x91CC;&#x9762;libs&#x4E0B;&#x9762;&#x7684;&#x672C;&#x5730;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x5C06;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x548C;&#x81EA;&#x5DF1;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;Jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x4E2A;&#x70B9;&#x8BA9;&#x6211;&#x8D39;&#x89E3;&#x4E86;&#x597D;&#x4E45;&#xFF0C;&#x5176;&#x5B9E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF1A;&#x4F9D;&#x8D56;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x4E5F;&#x4F1A;&#x7F13;&#x5B58;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x7528;gradle&#x627E;&#x5230;&#x8FD9;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#xFF1F;&#x540E;&#x9762;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;<code>configurations.compile.collect</code>&#x5C31;&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;jar&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x518D;&#x770B;&#x4E00;&#x4E0B;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x4E0D;&#x662F;&#x8FD8;&#x6709;&#x5B50;&#x6811;&#xFF0C;&#x800C;<code>zipTree</code>&#x53EF;&#x4EE5;&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0B;&#x9762;&#x7684;&#x5B50;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;Task &#x7684;from &#x53EF;&#x4EE5;&#x6539;&#x4E3A;</p>
+<pre><code>configurations.compile.
+   collect {
+it.isDirectory() ? it : zipTree(it)
+}
+</code></pre><p>&#x8F93;&#x5165;&#x660E;&#x786E;&#x4E86;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x91CC;&#x9762;&#x7684;META_INF&#x76EE;&#x5F55;&#x53BB;&#x6389;&#x5C31;&#x884C;&#x4E86;&#x3002;&#x90A3;&#x5C31;&#x7A0D;&#x5FAE;&#x6539;&#x8FDB;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code> configurations.compile.
+   collect {
+it.isDirectory() ? it : zipTree(it).matching {
+exclude{it.path.contains(&apos;META-INF&apos;)}
+}
+}
+</code></pre><p>&#x5982;&#x679C;&#x662F;&#x6587;&#x4EF6;&#x5939;&#x5BF9;&#x5176;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x90FD;&#x5339;&#x914D;&#x4E00;&#x4E0B;META-INF&#xFF0C;&#x8FDB;&#x800C;&#x6392;&#x9664; META-INF&#x6587;&#x4EF6;&#x5939;&#x3002;<br>&#x4E0A;&#x9762;&#x6392;&#x9664;&#x4E86;META-INF&#x7B49;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4E0D;&#x60F3;&#x5C06;&#x6240;&#x6709;&#x5728;dependencies&#x91CC;&#x9762;&#x4F9D;&#x8D56;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x6253;&#x5305;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x5F88;&#x4F18;&#x96C5;&#x5730;&#x5C06;&#x8FD9;&#x4E9B;&#x5305;&#x8FDB;&#x884C;&#x5220;&#x9009;&#x4E86;&#xFF1F;&#x800C;&#x4E14;&#x4E0D;&#x5F71;&#x54CD;&#x6B63;&#x5E38;&#x7684;&#x7F16;&#x8BD1;&#x3002;&#x53EA;&#x9700;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x9762;&#x52A0;&#x5165;</p>
+<pre><code>configurations{
+retain
+compile.extendsFrom retain
+}
+</code></pre><p>&#x5E76;&#x4E14;&#x5C06;dependencies&#x91CC;&#x9762;&#x5C06;&#x81EA;&#x5DF1;&#x4E0D;&#x60F3;&#x6253;&#x5305;&#x7684;compile &#x4FEE;&#x6539;&#x4E3A; retain&#x3002;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>dependencies {
+
+retain &apos;javax.annotation:javax.annotation-api:1.2&apos;
+
+}
+</code></pre><p> &#x6700;&#x540E;&#x5C06;&#x4E0A;&#x9762;from&#x91CC;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;<br>    (configurations.compile-configurations.retain).<br>    collect {<br>    it.isDirectory() ? it : zipTree(it).matching {<br>    exclude{it.path.contains(&#x2018;META-INF&#x2019;)}<br>    }<br>    }<br>&#x8FD9;&#x6837;javax.annotation:javax.annotation-api:1.2 &#x8FD9;&#x4E2A;&#x5305;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x6253;&#x8FDB;&#x6700;&#x7EC8;&#x7684;Jar&#x5305;&#x3002;<br>&#x6700;&#x7EC8;&#x7684;task&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;task &#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;buildJar&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;src&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x7B2C;&#x4E09;&#x65B9;&#x4F9D;&#x8D56;&#x7684;&#x4EE3;&#x7801;&#x6253;&#x6210;&#x4E00;&#x4E2A;jar&#x5305;&#x3002;</p>
+<pre><code>task createJarWithDen(type: Jar) {
+baseName = &quot;littlec&quot;
+from {
+ List list= (configurations.compile-configurations.retain).
+   collect {
+it.isDirectory() ? it : zipTree(it).matching {
+exclude{it.path.contains(&apos;META-INF&apos;)}
+}
+}
+   List&lt;ObjectremoveList=new ArrayList&lt;&gt;();
+for(Object object:list){
+println(object.toString());
+if(object.toString().contains(&quot;jsr&quot;)) {
+removeList.add(object)
+println(&quot;jsrObject remove&quot;)
+}else if(object.toString().contains(&quot;javax.annotation&quot;)){
+removeList.add(object)
+println(&quot;annotation remove&quot;)
+}else if(object.toString().contains(&quot;MiPush_SDK_Client&quot;)){
+removeList.add(object)
+println(&quot;MiPush_SDK_Client remove&quot;)
+}
+}
+list.removeAll(removeList)
+return list;
+}
+with buildJar
+}
+</code></pre><p>&#x91CC;&#x9762;for&#x5FAA;&#x73AF;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x4E00;&#x4E9B;&#x4E0D;&#x7528;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x4F60;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x66F4;&#x6539;&#x3002;</p>
+<h1 id="&#x56DB;-&#x8FD0;&#x884C;"><a href="#&#x56DB;-&#x8FD0;&#x884C;" class="headerlink" title="&#x56DB;. &#x8FD0;&#x884C;"></a>&#x56DB;. &#x8FD0;&#x884C;</h1><pre><code>gradlew createJarWithDen &#x6216;&#x8005; gradle createJarWithDen
+</code></pre><p>&#x5E0C;&#x671B;&#x676D;&#x5DDE;&#x7684;&#x540C;&#x884C;&#x52A0;&#x5165;&#x300A;android&#x676D;&#x5DDE;&#x5730;&#x533A;&#x4EA4;&#x6D41;&#x7FA4;&#x2013; 527906545&#x300B;</p>
 ]]></content>
     </entry>
     
